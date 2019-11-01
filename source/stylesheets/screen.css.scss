@@ -89,6 +89,7 @@ html, body {
       box-sizing: border-box;
       margin: $nav-v-padding $nav-padding;
       width: $nav-width - ($nav-padding*2);
+      font-weight: 700;
       outline: none;
       color: $nav-text;
       border-radius: 0; /* ios has a default border radius */
@@ -98,7 +99,7 @@ html, body {
       position: absolute;
       top: 17px;
       left: $nav-padding;
-      color: $nav-text;
+      color: $search-box-border-color;
       @extend %icon-search;
     }
   }
@@ -153,7 +154,8 @@ html, body {
 
   // This is the currently selected ToC entry
   .toc-link.active {
-    background-color: $nav-active-bg;
+    border-left: 3px solid #6BC074;
+    background: $nav-active-bg;
     color: $nav-active-text;
   }
 
@@ -286,9 +288,11 @@ html, body {
     float:left;
     color: $lang-select-text;
     text-decoration: none;
-    padding: 0 10px;
+    padding: 2px 14px;
+    margin: 9px 2px;
     line-height: 30px;
     outline: 0;
+    border-radius: 4px;
 
     &:active, &:focus {
       background-color: $lang-select-pressed-bg;
