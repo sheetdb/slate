@@ -82,7 +82,7 @@
         }
         var thisTitle = $best.data("title")
         if (thisTitle !== undefined && thisTitle.length > 0) {
-          document.title = thisTitle + " – " + originalTitle;
+          document.title = originalTitle + ' - ' + thisTitle;
         } else {
           document.title = originalTitle;
         }

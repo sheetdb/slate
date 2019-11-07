@@ -1,22 +1,16 @@
-# Errors
+# HTTP Status Codes
 
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-The Kittn API uses the following error codes:
+Each response is in JSON format. Of course, there is a status code in each response. Here is the list of available response codes:
 
 
-Error Code | Meaning
+Status Code | Meaning
 ---------- | -------
-400 | Bad Request -- Your request is invalid.
-401 | Unauthorized -- Your API key is wrong.
-403 | Forbidden -- The kitten requested is hidden for administrators only.
-404 | Not Found -- The specified kitten could not be found.
-405 | Method Not Allowed -- You tried to access a kitten with an invalid method.
-406 | Not Acceptable -- You requested a format that isn't json.
-410 | Gone -- The kitten requested has been removed from our servers.
-418 | I'm a teapot.
-429 | Too Many Requests -- You're requesting too many kittens! Slow down!
-500 | Internal Server Error -- We had a problem with our server. Try again later.
-503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+200 OK | The request has succeeded for GET, PUT, PATCH and DELETE requests.
+201 Created | The request has succeeded for POST requests.
+400 Bad Request | API could not understand the request.
+401 Unauthorized | An error with authorization using a Google account or incorrect credentials for API if Basic Auth is enabled.
+402 Payment Required | Payment is required to process the request.
+403 Forbidden | Action is forbidden.
+404 Not Found | The server did not find anything matching the request.
+429 Too Many Requests | Exhausted limit requests. [Upgrade your plan.](https://sheetdb.io/pricing)
+500 Internal Server Error | We had a problem with our server. Try again later.

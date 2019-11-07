@@ -31,9 +31,19 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @extend %default-font;
+  font-size: 16px;
+  color: darken(#6a7282,20%);
   background-color: $main-bg;
   height: 100%;
   -webkit-text-size-adjust: none; /* Never autoresize text */
+}
+
+a {
+  color: darken(#d9725c,2%);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -154,7 +164,7 @@ html, body {
 
   // This is the currently selected ToC entry
   .toc-link.active {
-    border-left: 3px solid #6BC074;
+    border-left: 5px solid #6BC074;
     background: $nav-active-bg;
     color: $nav-active-text;
   }
@@ -209,6 +219,7 @@ html, body {
   transition-property: background;
   transition-timing-function: linear;
   transition-duration: 130ms;
+  border-left: 5px solid transparent;
 }
 
 // button to show navigation on mobile devices
@@ -454,8 +465,9 @@ html, body {
 
   code {
     background-color: rgba(0,0,0,0.05);
-    padding: 3px;
+    padding: 2px 5px;
     border-radius: 3px;
+    font-size: .95em;
     @extend %break-words;
     @extend %code-font;
   }
@@ -470,7 +482,7 @@ html, body {
     padding-bottom: 1em;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
-    background: $aside-notice-bg;
+    background: lighten(#6BC074,25%);
     line-height: 1.6;
 
     &.warning {
@@ -616,4 +628,8 @@ html, body {
 
 .highlight, .highlight .w {
   background-color: $code-bg;
+}
+
+.cryptedmail:after {
+  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld);
 }
