@@ -52,9 +52,8 @@ under the License.
     <meta name="msapplication-wide310x150logo" content="https://sheetdb.io/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="https://sheetdb.io/mstile-310x310.png" />
 
-    <style>
-      <%= Rouge::Themes::MonokaiSublime.render(:scope => '.highlight') %>
-    </style>
+    <%= partial "partials/syntax_theme.erb" %>
+
     <%= stylesheet_link_tag :screen, media: :screen %>
     <%= stylesheet_link_tag :print, media: :print %>
     <% if current_page.data.search %>

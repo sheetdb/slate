@@ -26,7 +26,7 @@ $result = json_decode(
 );
 ```
 
-```javascript
+```html--javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     // Get all data
@@ -102,7 +102,7 @@ $result = json_decode(
 );
 ```
 
-```javascript
+```html--javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     axios.get('https://sheetdb.io/api/v1/58f61be4dda40/keys')
@@ -142,7 +142,7 @@ $result = json_decode(
 );
 ```
 
-```javascript
+```html--javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     axios.get('https://sheetdb.io/api/v1/58f61be4dda40/name')
@@ -183,7 +183,7 @@ $result = json_decode(
 );
 ```
 
-```javascript
+```html--javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     axios.get('https://sheetdb.io/api/v1/58f61be4dda40/sheets')
@@ -227,7 +227,7 @@ $result = json_decode(
 );
 ```
 
-```javascript
+```html--javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     axios.get('https://sheetdb.io/api/v1/58f61be4dda40/count')
@@ -268,7 +268,7 @@ $result = json_decode(
 );
 ```
 
-```javascript
+```html--javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     axios.get('https://sheetdb.io/api/v1/58f61be4dda40/search?name=Steve&age=22&casesensitive=true')
@@ -327,7 +327,7 @@ $result = json_decode(
 );
 ```
 
-```javascript
+```html--javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     axios.get('https://sheetdb.io/api/v1/58f61be4dda40/search_or?name=Steve&age=19&casesensitive=true')
@@ -402,7 +402,7 @@ $result = json_decode(
 );
 ```
 
-```javascript
+```html--javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     axios.post('https://sheetdb.io/api/v1/58f61be4dda40',{
@@ -457,7 +457,7 @@ $result = json_decode(
 );
 ```
 
-```javascript
+```html--javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     axios.patch('https://sheetdb.io/api/v1/58f61be4dda40/id/61',{
@@ -520,7 +520,7 @@ $result = json_decode(
 );
 ```
 
-```javascript
+```html--javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     axios.patch('https://sheetdb.io/api/v1/58f61be4dda40/batch_update', {
@@ -596,7 +596,7 @@ $result = json_decode(
 );
 ```
 
-```javascript
+```html--javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     axios.delete('https://sheetdb.io/api/v1/58f61be4dda40/id/61')
@@ -643,7 +643,7 @@ $result = json_decode(
 );
 ```
 
-```javascript
+```html--javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     axios.delete('https://sheetdb.io/api/v1/58f61be4dda40/all')

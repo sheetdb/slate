@@ -2,9 +2,9 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - php
-  - javascript
+  - shell: cURL
+  - php: PHP
+  - html--javascript: JavaScript
 
 toc_footers:
   - <a href='https://sheetdb.io'>SheetDB</a>

@@ -29,200 +29,212 @@
     <meta name="msapplication-square310x310logo" content="https://sheetdb.io/mstile-310x310.png" />
 
     <style>
-      .highlight table td { padding: 5px; }
-.highlight table pre { margin: 0; }
-.highlight .gh {
-  color: #999999;
-}
-.highlight .sr {
-  color: #f6aa11;
-}
-.highlight .go {
-  color: #888888;
-}
-.highlight .gp {
-  color: #555555;
-}
-.highlight .gs {
-}
-.highlight .gu {
-  color: #aaaaaa;
-}
-.highlight .nb {
-  color: #f6aa11;
-}
-.highlight .cm {
-  color: #75715e;
-}
-.highlight .cp {
-  color: #75715e;
-}
-.highlight .c1 {
-  color: #75715e;
-}
-.highlight .cs {
-  color: #75715e;
-}
-.highlight .c, .highlight .cd {
-  color: #75715e;
-}
-.highlight .err {
-  color: #960050;
-}
-.highlight .gr {
-  color: #960050;
-}
-.highlight .gt {
-  color: #960050;
-}
-.highlight .gd {
-  color: #49483e;
-}
-.highlight .gi {
-  color: #49483e;
-}
-.highlight .ge {
-  color: #49483e;
-}
-.highlight .kc {
-  color: #66d9ef;
-}
-.highlight .kd {
-  color: #66d9ef;
-}
-.highlight .kr {
-  color: #66d9ef;
-}
-.highlight .no {
-  color: #66d9ef;
-}
-.highlight .kt {
-  color: #66d9ef;
-}
-.highlight .mf {
-  color: #ae81ff;
-}
-.highlight .mh {
-  color: #ae81ff;
-}
-.highlight .il {
-  color: #ae81ff;
-}
-.highlight .mi {
-  color: #ae81ff;
-}
-.highlight .mo {
-  color: #ae81ff;
-}
-.highlight .m, .highlight .mb, .highlight .mx {
-  color: #ae81ff;
-}
-.highlight .sc {
-  color: #ae81ff;
-}
-.highlight .se {
-  color: #ae81ff;
-}
-.highlight .ss {
-  color: #ae81ff;
-}
-.highlight .sd {
-  color: #e6db74;
-}
-.highlight .s2 {
-  color: #e6db74;
-}
-.highlight .sb {
-  color: #e6db74;
-}
-.highlight .sh {
-  color: #e6db74;
-}
-.highlight .si {
-  color: #e6db74;
-}
-.highlight .sx {
-  color: #e6db74;
-}
-.highlight .s1 {
-  color: #e6db74;
-}
-.highlight .s {
-  color: #e6db74;
-}
-.highlight .na {
-  color: #a6e22e;
-}
-.highlight .nc {
-  color: #a6e22e;
-}
-.highlight .nd {
-  color: #a6e22e;
-}
-.highlight .ne {
-  color: #a6e22e;
-}
-.highlight .nf {
-  color: #a6e22e;
-}
-.highlight .vc {
-  color: #ffffff;
-}
-.highlight .nn {
-  color: #ffffff;
-}
-.highlight .nl {
-  color: #ffffff;
-}
-.highlight .ni {
-  color: #ffffff;
-}
-.highlight .bp {
-  color: #ffffff;
-}
-.highlight .vg {
-  color: #ffffff;
-}
-.highlight .vi {
-  color: #ffffff;
-}
-.highlight .nv {
-  color: #ffffff;
-}
-.highlight .w {
-  color: #ffffff;
-}
-.highlight {
-  color: #ffffff;
-}
-.highlight .n, .highlight .py, .highlight .nx {
-  color: #ffffff;
-}
-.highlight .ow {
-  color: #f92672;
-}
-.highlight .nt {
-  color: #f92672;
-}
-.highlight .k, .highlight .kv {
-  color: #f92672;
-}
-.highlight .kn {
-  color: #f92672;
-}
-.highlight .kp {
-  color: #f92672;
-}
-.highlight .o {
-  color: #f92672;
-}
-    </style>
-    <link href="stylesheets/screen-d8c1fcfb.css" rel="stylesheet" media="screen" />
+  .highlight table td { padding: 5px; }
+  .highlight table pre { margin: 0; }
+  .highlight {
+    font-weight: 700;
+    font-size: 16px;
+    /* line-height: 1.2sem; */
+  }
+  .highlight .gh {
+    color: #999999;
+  }
+  .highlight .sr {
+    color: #f6aa11;
+  }
+  .highlight .go {
+    color: #888888;
+  }
+  .highlight .gp {
+    color: #555555;
+  }
+  .highlight .gs,
+  .highlight .gu {
+    color: #aaaaaa;
+  }
+  .highlight .nb {
+    color: #82aaff;
+  }
+  .highlight .cm {
+    color: #546e7a;
+  }
+  .highlight .cp {
+    color: #f78c6c;
+  }
+  .highlight .c1 {
+    color: #546e7a;
+  }
+  .highlight .cs {
+    color: #546e7a;
+  }
+  .highlight .c, .highlight .cd {
+    color: #546e7a;
+  }
+  .highlight .err {
+    color: #960050;
+  }
+  .highlight .gr {
+    color: #960050;
+  }
+  .highlight .gt {
+    color: #960050;
+  }
+  .highlight .gd {
+    color: #49483e;
+  }
+  .highlight .gi {
+    color: #49483e;
+  }
+  .highlight .ge {
+    color: #49483e;
+  }
+  .highlight .kc {
+    color: #f78c6c;
+  }
+  .highlight .kd {
+    color: #66d9ef;
+  }
+  .highlight .kr {
+    color: #66d9ef;
+  }
+  .highlight .no {
+    color: #66d9ef;
+  }
+  .highlight .kt {
+    color: #66d9ef;
+  }
+  .highlight .mf {
+    color: #ae81ff;
+  }
+  .highlight .mh {
+    color: #ae81ff;
+  }
+  .highlight .il {
+    color: #ae81ff;
+  }
+  .highlight .mi {
+    color: #f78c6c;
+  }
+  .highlight .mo {
+    color: #ae81ff;
+  }
+  .highlight .m, .highlight .mb, .highlight .mx {
+    color: #ae81ff;
+  }
+  .highlight .sc {
+    color: #ae81ff;
+  }
+  .highlight .se {
+    color: #ae81ff;
+  }
+  .highlight .ss {
+    color: #ae81ff;
+  }
+  .highlight .sd {
+    color: #e6db74;
+  }
+  .highlight .s2 {
+    color: #e6db74;
+  }
+  .highlight .sb {
+    color: #e6db74;
+  }
+  .highlight .sh {
+    color: #e6db74;
+  }
+  .highlight .si {
+    color: #e6db74;
+  }
+  .highlight .sx {
+    color: #e6db74;
+  }
+  .highlight .s1 {
+    color: #c3e88d;
+  }
+  .highlight .s {
+    color: #c3e88d;
+  }
+  .highlight .na {
+    color: #ffcb6b;
+  }
+  .highlight .nc {
+    color: #a6e22e;
+  }
+  .highlight .nd {
+    color: #a6e22e;
+  }
+  .highlight .ne {
+    color: #a6e22e;
+  }
+  .highlight .nf {
+    color: #a6e22e;
+  }
+  .highlight .vc {
+    color: #ffffff;
+  }
+  .highlight .nn {
+    color: #ffffff;
+  }
+  .highlight .nl {
+    color: #ffffff;
+  }
+  .highlight .ni {
+    color: #ffffff;
+  }
+  .highlight .bp {
+    color: #ffffff;
+  }
+  .highlight .vg {
+    color: #ffffff;
+  }
+  .highlight .vi {
+    color: #ffffff;
+  }
+  .highlight .nv {
+    color: #ffffff;
+  }
+  .highlight .w {
+    color: #ffffff;
+  }
+  .highlight {
+    color: #ffffff;
+  }
+  .highlight .nx {
+    color: #ffffff;
+  }
+  .highlight .py, .highlight .n {
+    color: #ffffff;
+  }
+  .highlight .p {
+    color: #89ddff;
+  }
+  .highlight .ow {
+    color: #89ddff;
+  }
+  .highlight .nt {
+    color: #f07178;
+  }
+  .highlight .k, .highlight .kv {
+    color: #82aaff;
+  }
+  .highlight .kn {
+    color: #89ddff;
+  }
+  .highlight .kp {
+    color: #89ddff;
+  }
+  .highlight .o {
+    color: #89ddff;
+  }
+</style>
+
+
+    <link href="stylesheets/screen-778c82f1.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-dada656e.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;php&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;php&quot;,&quot;html--javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -232,9 +244,9 @@
     <div class="toc-wrapper">
       <img src="images/logo-4a5496e4.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="php">php</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="shell">cURL</a>
+              <a href="#" data-language-name="php">PHP</a>
+              <a href="#" data-language-name="html--javascript">JavaScript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -477,8 +489,8 @@ curl https://sheetdb.io/api/v1/58f61be4dda40?sort_by<span class="o">=</span>name
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
   <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
 <span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
     <span class="c1">// Get all data</span>
     <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -496,8 +508,8 @@ curl https://sheetdb.io/api/v1/58f61be4dda40?sort_by<span class="o">=</span>name
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
 <blockquote>
 <p>Example response:</p>
 </blockquote>
@@ -543,14 +555,14 @@ curl https://sheetdb.io/api/v1/58f61be4dda40/keys
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
   <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/keys'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
 <span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
     <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/keys'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
 <blockquote>
 <p>Example response:</p>
 </blockquote>
@@ -571,14 +583,14 @@ curl https://sheetdb.io/api/v1/58f61be4dda40/name
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
   <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/name'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
 <span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
     <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/name'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
 <blockquote>
 <p>Example response:</p>
 </blockquote>
@@ -600,14 +612,14 @@ curl https://sheetdb.io/api/v1/58f61be4dda40/name
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
   <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/sheets'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
 <span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
     <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/sheets'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
 <blockquote>
 <p>Example response:</p>
 </blockquote>
@@ -632,14 +644,14 @@ curl https://sheetdb.io/api/v1/58f61be4dda40/name
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
   <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/count'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
 <span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
     <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/count'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
 <blockquote>
 <p>Example response:</p>
 </blockquote>
@@ -661,14 +673,14 @@ curl https://sheetdb.io/api/v1/58f61be4dda40/name
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
   <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/search?name=Steve&amp;age=22&amp;casesensitive=true'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
 <span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
     <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/search?name=Steve&amp;age=22&amp;casesensitive=true'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
 <blockquote>
 <p>Example response:</p>
 </blockquote>
@@ -710,14 +722,14 @@ Wildcard work only when READ and SEARCH permissions are both enabled, if only SE
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
   <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/search_or?name=Steve&amp;age=19&amp;casesensitive=true'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
 <span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
     <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/search_or?name=Steve&amp;age=19&amp;casesensitive=true'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
 <blockquote>
 <p>Example response:</p>
 </blockquote>
@@ -775,15 +787,15 @@ Wildcard work only when READ and SEARCH permissions are both enabled, if only SE
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
   <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
 <span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
     <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40'</span><span class="p">,{</span>
         <span class="s2">"data"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Scott"</span><span class="p">,</span> <span class="s2">"age"</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
     <span class="p">}).</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
 <blockquote>
 <p>Example response:</p>
 </blockquote>
@@ -818,15 +830,15 @@ Wildcard work only when READ and SEARCH permissions are both enabled, if only SE
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
   <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/id/61'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
 <span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
     <span class="nx">axios</span><span class="p">.</span><span class="nx">patch</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/id/61'</span><span class="p">,{</span>
         <span class="s2">"data"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"Scott"</span><span class="p">,</span> <span class="s2">"age"</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
     <span class="p">}).</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
 <blockquote>
 <p>Example response:</p>
 </blockquote>
@@ -869,8 +881,8 @@ Replace <code>{column}</code> and <code>{value}</code> with your values (without
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
   <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/batch_update'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
 <span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
     <span class="nx">axios</span><span class="p">.</span><span class="nx">patch</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/batch_update'</span><span class="p">,</span> <span class="p">{</span>
         <span class="na">data</span><span class="p">:</span> <span class="p">[</span>
             <span class="p">{</span>
@@ -886,8 +898,8 @@ Replace <code>{column}</code> and <code>{value}</code> with your values (without
     <span class="p">}).</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
 <blockquote>
 <p>Example response:</p>
 </blockquote>
@@ -933,14 +945,14 @@ Batch update works only on paid accounts.
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
   <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/id/61'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
 <span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
     <span class="nx">axios</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/id/61'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
 <blockquote>
 <p>Example response:</p>
 </blockquote>
@@ -968,14 +980,14 @@ Replace <code>{column}</code> and <code>{value}</code> with your values (without
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
   <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/all'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
 <span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
     <span class="nx">axios</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/all'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
 <blockquote>
 <p>Example response:</p>
 </blockquote>
@@ -1004,8 +1016,8 @@ curl https://sheetdb.io/api/v1/58f61be4dda40?sheet<span class="o">=</span>Sheet2
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
   <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40?sheet=Sheet2'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
 <span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
     <span class="c1">// Get all data</span>
     <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40?sheet=Sheet2'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -1017,8 +1029,8 @@ curl https://sheetdb.io/api/v1/58f61be4dda40?sheet<span class="o">=</span>Sheet2
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
 <blockquote>
 <p>Example response:</p>
 </blockquote>
@@ -1066,14 +1078,14 @@ curl https://sheetdb.io/api/v1/58f61be4dda40?sheet<span class="o">=</span>Sheet2
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
   <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/sheet'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
 <span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
     <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/sheet'</span><span class="p">,{</span><span class="s2">"name"</span><span class="p">:</span> <span class="s2">"New Sheet"</span><span class="p">,</span> <span class="s2">"first_row"</span><span class="p">:[</span><span class="s2">"id"</span><span class="p">,</span><span class="s2">"name"</span><span class="p">]})</span>
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
 <blockquote>
 <p>Example response:</p>
 </blockquote>
@@ -1112,8 +1124,8 @@ Tabs requests works only on plans premium and above.
 <span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
   <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/sheet'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
 <span class="p">);</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</code></pre><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
     <span class="nx">axios</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/sheet'</span><span class="p">,{</span>
         <span class="s2">"data"</span><span class="p">:{</span>
             <span class="s2">"name"</span><span class="p">:</span><span class="s2">"New Sheet"</span>
@@ -1122,8 +1134,8 @@ Tabs requests works only on plans premium and above.
     <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
-<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
-</span></code></pre>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
 <blockquote>
 <p>Example response:</p>
 </blockquote>
@@ -1236,9 +1248,9 @@ or inapp chat.</p>
       </div>
       <div class="dark-box">
           <div class="lang-selector">
-                <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="php">php</a>
-                <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="shell">cURL</a>
+                <a href="#" data-language-name="php">PHP</a>
+                <a href="#" data-language-name="html--javascript">JavaScript</a>
           </div>
       </div>
     </div>

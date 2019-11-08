@@ -24,7 +24,7 @@ $result = json_decode(
 );
 ```
 
-```javascript
+```html--javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     // Get all data
@@ -98,7 +98,7 @@ $result = json_decode(
 );
 ```
 
-```javascript
+```html--javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     axios.post('https://sheetdb.io/api/v1/58f61be4dda40/sheet',{"name": "New Sheet", "first_row":["id","name"]})
@@ -154,7 +154,7 @@ $result = json_decode(
 );
 ```
 
-```javascript
+```html--javascript
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     axios.delete('https://sheetdb.io/api/v1/58f61be4dda40/sheet',{
