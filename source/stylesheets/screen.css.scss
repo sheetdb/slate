@@ -305,6 +305,10 @@ a {
     outline: 0;
     border-radius: 4px;
 
+    &:first-child {
+      margin-left: 1em;
+    }
+
     &:active, &:focus {
       background-color: $lang-select-pressed-bg;
       color: $lang-select-pressed-text;

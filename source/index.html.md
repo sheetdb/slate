@@ -24,6 +24,13 @@ search: true
 
 Each spreadsheet document you want to access must be configured in the SheetDB panel as an API. After creating the API, you'll receive a unique http address. You can send RESTful requests to read, create, update or delete rows. The rest of the documentation explains how each request works and what you will receive in response.
 
+You can choose your preferred programming language in the upper right corner.
+
+* Shell - the command line
+* PHP - examples in pure PHP, you can also use [our composer library](https://github.com/sheetdb/sheetdb-php)
+* JavaScript - we recommend to use Axios library or [our npm library](https://github.com/sheetdb/sheetdb-js)
+* Pure HTML - to learn how to use SheetDB with only HTML <a href="#handlebars-installation">go to Handlebars</a>
+
 # Installation
 
 No configuration needed. As long as you can send HTTP requests and use the JSON format, you're good to go!
