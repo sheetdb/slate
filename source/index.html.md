@@ -37,6 +37,7 @@ No configuration needed. As long as you can send HTTP requests and use the JSON 
 
 You can also use one of our Libraries.
 
+WordPress plugin: [SheetDB on WordPress](https://wordpress.org/plugins/sheetdb/)
 JavaScript: [Google Spreadsheet API for JavaScript on GitHub](https://github.com/sheetdb/sheetdb-js)<br />
 PHP: [Google Spreadsheet API for PHP on GitHub](https://github.com/sheetdb/sheetdb-php)
 
