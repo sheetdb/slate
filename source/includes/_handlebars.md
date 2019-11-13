@@ -4,7 +4,7 @@
 
 Copy the following code and add it before the closing `</body>` tag.
 
-`<script src="https://sheetdb.io/scripts/handlebars-1.0.3.js"></script>`
+`<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.0.3.js"></script>`
 
 That's it. You are ready to use our handlebars snippet.
 
@@ -38,7 +38,7 @@ Now you can display data from your spreadsheet.
     </tr>
   </tbody>
 </table>
-<script src="https://sheetdb.io/scripts/handlebars-1.0.3.js"></script>
+<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.0.3.js"></script>
 ```
 
 * You can limit and offset your response using `data-sheetdb-limit` and `data-sheetdb-offset` attributes
@@ -71,4 +71,4 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
     </tr>
   </tbody>
 </table>
-<script src="https://sheetdb.io/scripts/handlebars-1.0.3.js"></script>
+<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.0.3.js"></script>
