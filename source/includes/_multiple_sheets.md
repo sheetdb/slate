@@ -1,5 +1,9 @@
 # Multiple Sheets (tabs)
 
+To select other then the first sheet you need to pass a <code style="word-break:normal;">sheet</code> parameter wtih sheet name. You can add this parameter to any of our RESTful requests (`GET`, `POST`, `PATCH`, `PUT`, `DELETE`).
+
+When sheet is not found you'll get 404 error.
+
 ## GET - All data from a tab
 
 ```shell
@@ -66,9 +70,7 @@ $result = json_decode(
 
 `GET https://sheetdb.io/api/v1/58f61be4dda40?sheet=Sheet2`
 
-To select other then the first sheet (whitch is default) you need to pass a <code style="word-break:normal;">sheet</code> parameter wtih sheet name. You can add this parameter to any of our RESTful requests.
-
-When sheet is not found you'll get not found error.
+This is an example how to get data from sheet `Sheet2`
 
 ## POST - Add a sheet to the spreadsheet (tab)
 
