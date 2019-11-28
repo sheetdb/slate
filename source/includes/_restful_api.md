@@ -425,6 +425,8 @@ $result = json_decode(
 
 Create rows in document. Your request should contain `data` parameter - it should be an array of rows. Keys inside the object should be a column names (see <a href="#get-keys"># GET - keys</a>) and values will be values inside a spreadsheet. Rows will be added at the end of spreadsheet. If you want to add a single row, simply send an array with one item `{data: [{"id":5,"name":"Frank"}]})`.
 
+You can use magic value `INCREMENT` (upper case). It will look for the biggest number in the given column and increment by 1.
+
 API will return the number of created rows with status code `201 Created`.
 
 ## PATCH/PUT - update
