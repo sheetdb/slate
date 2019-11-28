@@ -818,7 +818,7 @@ Wildcard work only when READ and SEARCH permissions are both enabled, if only SE
 
 <p>Create rows in document. Your request should contain <code>data</code> parameter - it should be an array of rows. Keys inside the object should be a column names (see <a href="#get-keys"># GET - keys</a>) and values will be values inside a spreadsheet. Rows will be added at the end of spreadsheet. If you want to add a single row, simply send an array with one item <code>{data: [{&quot;id&quot;:5,&quot;name&quot;:&quot;Frank&quot;}]})</code>.</p>
 
-<p>You can use magic value <code>INCREMENT</code> (upper case). It will look for the biggest number in the given column and increment by 1.</p>
+<p>You can use value <code>INCREMENT</code> (upper case). SheetDB will look for the biggest number in the given column and increase by 1.</p>
 
 <p>API will return the number of created rows with status code <code>201 Created</code>.</p>
 <h2 id='patch-put-update'>PATCH/PUT - update</h2><pre class="highlight shell tab-shell"><code>curl -X PATCH -H <span class="s2">"Content-Type: application/json"</span> https://sheetdb.io/api/v1/58f61be4dda40/id/61 -d <span class="s1">'{"data":[{ "name": "Scott", "age": "25" }]}'</span>
