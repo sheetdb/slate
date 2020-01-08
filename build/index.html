@@ -342,6 +342,17 @@
               </ul>
           </li>
           <li>
+            <a href="#data-safety" class="toc-h1 toc-link" data-title="Data safety">Data safety</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#how-we-protect-your-data" class="toc-h2 toc-link" data-title="How we protect your data">How we protect your data</a>
+                  </li>
+                  <li>
+                    <a href="#what-does-sheetdb-have-access-to" class="toc-h2 toc-link" data-title="What does SheetDB have access to?">What does SheetDB have access to?</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#other" class="toc-h1 toc-link" data-title="Other">Other</a>
               <ul class="toc-list-h2">
                   <li>
@@ -1237,6 +1248,28 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
 </table>
 
 <script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.0.5.js"></script>
+<h1 id='data-safety'>Data safety</h1><h2 id='how-we-protect-your-data'>How we protect your data</h2>
+<p>The confidentiality of your data is very important to us, which is why we do not store any of your data on our servers, other than API data for caching reasons. Also, for people without an API URL, guessing is almost impossible, but if you still need more protection, you can enable <a href="#authentication">Basic Auth</a>.</p>
+
+<p>We use the best tools and services on the market to protect your data.</p>
+<h2 id='what-does-sheetdb-have-access-to'>What does SheetDB have access to?</h2>
+<p>SheetDB can only access spreadsheets for which the API has been created. This means that SheetDB do not have access to your other files.</p>
+
+<p>If you need more details, we have permission to:</p>
+
+<ul>
+<li>https://www.googleapis.com/auth/userinfo.email</li>
+<li>https://www.googleapis.com/auth/userinfo.profile</li>
+<li>https://www.googleapis.com/auth/spreadsheets</li>
+</ul>
+
+<p>We do not have permission to:</p>
+
+<ul>
+<li>https://www.googleapis.com/auth/drive</li>
+</ul>
+
+<p>Without the last permission, it is impossible to list your files = to access to them.</p>
 <h1 id='other'>Other</h1><h2 id='value-input-option'>Value Input Option</h2>
 <p>To your POST, PUT and PATCH (create and update) requests, you can add optional <code>mode</code> parameter. It controls whether input strings are parsed or not, as described in the following:</p>
 
