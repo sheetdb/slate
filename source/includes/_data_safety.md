@@ -1,6 +1,6 @@
 # Data safety
 
-## How we protect your data
+## How do we protect your data
 
 The confidentiality of your data is very important to us, which is why we do not store any of your data on our servers, other than API data for caching reasons. Also, for people without an API URL, guessing is almost impossible, but if you still need more protection, you can enable [Basic Auth](#authentication).
 
