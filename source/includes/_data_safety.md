@@ -9,15 +9,3 @@ We use the best tools and services on the market to protect your data.
 ## What does SheetDB have access to?
 
 SheetDB can only access spreadsheets for which the API has been created. This means that SheetDB do not have access to your other files.
-
-If you need more details, we have permission to:
-
-* https://www.googleapis.com/auth/userinfo.email
-* https://www.googleapis.com/auth/userinfo.profile
-* https://www.googleapis.com/auth/spreadsheets
-
-We do not have permission to:
-
-* https://www.googleapis.com/auth/drive
-
-Without the last permission, it is impossible to list your files = to access to them.
