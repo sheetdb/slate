@@ -81,6 +81,7 @@ You can use optional parameters:
 * `offset` - row from which it should start (how many rows to skip)
 * `sort_by` - the column you want to sort by
 * `sort_order` - sort in `asc` or `desc` order
+* `sort_method` - if you want to search by date, use `sort_method=date`, it will automatically detect the date format
 
 ## GET - Keys
 
@@ -306,6 +307,7 @@ You can use optional parameters:
 * `offset` - row from which it should start (how many rows to skip)
 * `sort_by` - the column you want to sort by
 * `sort_order` - sort in `asc` or `desc` order
+* `sort_method` - if you want to search by date, use `sort_method=date`, it will automatically detect the date format
 * `casesensitive` - by default search is not case sensitive, to make it case sensitive set this parameter to `true`
 
 ## GET - Search OR in document
@@ -370,6 +372,7 @@ You can use optional parameters:
 * `offset` - row from which it should start (how many rows to skip)
 * `sort_by` - the column you want to sort by
 * `sort_order` - sort in `asc` or `desc` order
+* `sort_method` - if you want to search by date, use `sort_method=date`, it will automatically detect the date format
 * `casesensitive` - by default search is not case sensitive, to make it case sensitive set this parameter to `true`
 
 ## POST - Create row
