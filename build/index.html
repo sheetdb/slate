@@ -559,7 +559,7 @@ curl https://sheetdb.io/api/v1/58f61be4dda40?sort_by<span class="o">=</span>name
 <li><code>offset</code> - row from which it should start (how many rows to skip)</li>
 <li><code>sort_by</code> - the column you want to sort by</li>
 <li><code>sort_order</code> - sort in <code>asc</code> or <code>desc</code> order</li>
-<li><code>sort_method</code> - if you want to search by date, use <code>sort_method=date</code>, it will automatically detect the date format</li>
+<li><code>sort_method</code> - if you want to search by date, set this parameter to <code>date</code>, it will automatically detect the date format</li>
 </ul>
 <h2 id='get-keys'>GET - Keys</h2><pre class="highlight shell tab-shell"><code><span class="c"># Get keys</span>
 curl https://sheetdb.io/api/v1/58f61be4dda40/keys
@@ -727,7 +727,7 @@ Wildcard work only when READ and SEARCH permissions are both enabled, if only SE
 <li><code>offset</code> - row from which it should start (how many rows to skip)</li>
 <li><code>sort_by</code> - the column you want to sort by</li>
 <li><code>sort_order</code> - sort in <code>asc</code> or <code>desc</code> order</li>
-<li><code>sort_method</code> - if you want to search by date, use <code>sort_method=date</code>, it will automatically detect the date format</li>
+<li><code>sort_method</code> - if you want to search by date, set this parameter to <code>date</code>, it will automatically detect the date format</li>
 <li><code>casesensitive</code> - by default search is not case sensitive, to make it case sensitive set this parameter to <code>true</code></li>
 </ul>
 <h2 id='get-search-or-in-document'>GET - Search OR in document</h2><pre class="highlight shell tab-shell"><code>curl https://sheetdb.io/api/v1/58f61be4dda40/search_or?name<span class="o">=</span>Steve&amp;age<span class="o">=</span>19&amp;casesensitive<span class="o">=</span><span class="nb">true</span>
@@ -782,7 +782,7 @@ Wildcard work only when READ and SEARCH permissions are both enabled, if only SE
 <li><code>offset</code> - row from which it should start (how many rows to skip)</li>
 <li><code>sort_by</code> - the column you want to sort by</li>
 <li><code>sort_order</code> - sort in <code>asc</code> or <code>desc</code> order</li>
-<li><code>sort_method</code> - if you want to search by date, use <code>sort_method=date</code>, it will automatically detect the date format</li>
+<li><code>sort_method</code> - if you want to search by date, set this parameter to <code>date</code>, it will automatically detect the date format</li>
 <li><code>casesensitive</code> - by default search is not case sensitive, to make it case sensitive set this parameter to <code>true</code></li>
 </ul>
 <h2 id='post-create-row'>POST - Create row</h2><pre class="highlight shell tab-shell"><code>curl -X POST -H <span class="s2">"Content-Type: application/json"</span> https://sheetdb.io/api/v1/58f61be4dda40 -d <span class="s1">'{"data":[{ "name": "Scott", "age": "25" }]}'</span>
