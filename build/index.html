@@ -718,6 +718,8 @@ curl https://sheetdb.io/api/v1/58f61be4dda40/name
 <p>You can search using wildcards. Asteriks (<code>*</code>) can represent any string.
 Wildcard work only when READ and SEARCH permissions are both enabled, if only SEARCH peremission is enabled, wildcard will not work for security reasons.</p>
 
+<p>If you want to exclude rows from the search results, use an exclamation mark before the value. For example, if you want all rows without name=Tom use this url: <a href="https://sheetdb.io/api/v1/58f61be4dda40/search?name=!Tom">https://sheetdb.io/api/v1/58f61be4dda40/search?name=<strong>!Tom</strong></a></p>
+
 <p>If you want to search for a string with a space, just repace space with <code>%20</code></p>
 
 <p>You can use optional parameters:</p>
@@ -772,6 +774,8 @@ Wildcard work only when READ and SEARCH permissions are both enabled, if only SE
 
 <p>You can search using wildcards. Asteriks <code>*</code> can represent any string.
 Wildcard work only when READ and SEARCH permissions are both enabled, if only SEARCH peremission is enabled, wildcard will not work for security reasons.</p>
+
+<p>If you want to exclude rows from the search results, use an exclamation mark before the value. For example, if you want all rows without name=Tom use this url: <a href="https://sheetdb.io/api/v1/58f61be4dda40/search?name=!Tom">https://sheetdb.io/api/v1/58f61be4dda40/search?name=<strong>!Tom</strong></a></p>
 
 <p>If you want to search for a string with a space, just repace space with <code>%20</code></p>
 

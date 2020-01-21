@@ -299,6 +299,8 @@ Returns an array of all rows matching parameters. If any query fails, the result
 You can search using wildcards. Asteriks (`*`) can represent any string.
 Wildcard work only when READ and SEARCH permissions are both enabled, if only SEARCH peremission is enabled, wildcard will not work for security reasons.
 
+If you want to exclude rows from the search results, use an exclamation mark before the value. For example, if you want all rows without name=Tom use this url: [https://sheetdb.io/api/v1/58f61be4dda40/search?name=**!Tom**](https://sheetdb.io/api/v1/58f61be4dda40/search?name=!Tom)
+
 If you want to search for a string with a space, just repace space with `%20`
 
 You can use optional parameters:
@@ -363,6 +365,8 @@ Similar to <a href="#get-search-in-document"># GET - Search</a> but if **any par
 
 You can search using wildcards. Asteriks `*` can represent any string.
 Wildcard work only when READ and SEARCH permissions are both enabled, if only SEARCH peremission is enabled, wildcard will not work for security reasons.
+
+If you want to exclude rows from the search results, use an exclamation mark before the value. For example, if you want all rows without name=Tom use this url: [https://sheetdb.io/api/v1/58f61be4dda40/search?name=**!Tom**](https://sheetdb.io/api/v1/58f61be4dda40/search?name=!Tom)
 
 If you want to search for a string with a space, just repace space with `%20`
 
