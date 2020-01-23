@@ -1,4 +1,4 @@
-## Our handlebars snippet
+# Our handlebars snippet
 
 ## Handlebars Installation
 
