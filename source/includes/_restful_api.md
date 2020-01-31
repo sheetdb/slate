@@ -81,7 +81,7 @@ You can use optional parameters:
 * `offset` - row from which it should start (how many rows to skip)
 * `sort_by` - the column you want to sort by
 * `sort_order` - sort in `asc` or `desc` order
-* `sort_method` - if you want to search by date, set this parameter to `date`, it will automatically detect the date format
+* `sort_method` - if you want to sort by date, set this parameter to `date`, it will automatically detect the date format
 
 ## GET - Keys
 
@@ -301,6 +301,8 @@ Wildcard work only when READ and SEARCH permissions are both enabled, if only SE
 
 If you want to exclude rows from the search results, use an exclamation mark before the value. For example, if you want all rows without name=Tom use this url: [https://sheetdb.io/api/v1/58f61be4dda40/search?name=**!Tom**](https://sheetdb.io/api/v1/58f61be4dda40/search?name=!Tom)
 
+You can use multiple queries for the same column, but you must use array notation (`[]` at the end of the variable name), for example: [https://sheetdb.io/api/v1/58f61be4dda40/search?name[]=!Tom&name[]=!Steve](https://sheetdb.io/api/v1/58f61be4dda40/search?name[]=!Tom&name[]=!Steve)
+
 If you want to search for a string with a space, just repace space with `%20`
 
 You can use optional parameters:
@@ -309,7 +311,7 @@ You can use optional parameters:
 * `offset` - row from which it should start (how many rows to skip)
 * `sort_by` - the column you want to sort by
 * `sort_order` - sort in `asc` or `desc` order
-* `sort_method` - if you want to search by date, set this parameter to `date`, it will automatically detect the date format
+* `sort_method` - if you want to sort by date, set this parameter to `date`, it will automatically detect the date format
 * `casesensitive` - by default search is not case sensitive, to make it case sensitive set this parameter to `true`
 
 ## GET - Search OR in document
@@ -366,7 +368,7 @@ Similar to <a href="#get-search-in-document"># GET - Search</a> but if **any par
 You can search using wildcards. Asteriks `*` can represent any string.
 Wildcard work only when READ and SEARCH permissions are both enabled, if only SEARCH peremission is enabled, wildcard will not work for security reasons.
 
-If you want to exclude rows from the search results, use an exclamation mark before the value. For example, if you want all rows without name=Tom use this url: [https://sheetdb.io/api/v1/58f61be4dda40/search?name=**!Tom**](https://sheetdb.io/api/v1/58f61be4dda40/search?name=!Tom)
+You can use multiple queries for the same column, but you must use array notation (`[]` at the end of the variable name), for example: [https://sheetdb.io/api/v1/58f61be4dda40/search_or?name[]=Tom&name[]=Steve](https://sheetdb.io/api/v1/58f61be4dda40/search_or?name[]=Tom&name[]=Steve)
 
 If you want to search for a string with a space, just repace space with `%20`
 
@@ -376,7 +378,7 @@ You can use optional parameters:
 * `offset` - row from which it should start (how many rows to skip)
 * `sort_by` - the column you want to sort by
 * `sort_order` - sort in `asc` or `desc` order
-* `sort_method` - if you want to search by date, set this parameter to `date`, it will automatically detect the date format
+* `sort_method` - if you want to sort by date, set this parameter to `date`, it will automatically detect the date format
 * `casesensitive` - by default search is not case sensitive, to make it case sensitive set this parameter to `true`
 
 ## POST - Create row
