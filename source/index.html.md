@@ -15,6 +15,7 @@ includes:
   - restful_api
   - multiple_sheets
   - handlebars
+  - caching
   - data_safety
   - other
 
