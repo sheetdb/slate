@@ -339,6 +339,9 @@
                   <li>
                     <a href="#display-data" class="toc-h2 toc-link" data-title="Display data">Display data</a>
                   </li>
+                  <li>
+                    <a href="#query-strings" class="toc-h2 toc-link" data-title="Query strings">Query strings</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1265,8 +1268,77 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
 </table>
 
 <script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"></script>
+<h2 id='query-strings'>Query strings</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"id"</span> <span class="na">placeholder=</span><span class="s">"Enter the ID"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+
+<span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>ID<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>Name<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>Age<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>Comment<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody</span> <span class="na">data-sheetdb-url=</span><span class="s">"https://sheetdb.io/api/v1/58f61be4dda40"</span>
+         <span class="na">data-sheetdb-query-string=</span><span class="s">"id"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>{{id}}<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>{{name}}<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>{{age}}<span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>{{comment}}<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre>
+<p>To change content dynamically you can use query strings. If you add <code>data-sheetdb-query-string</code> and specify the parameter you want to filter by, you can add query to the address bar. For example if you use <code>data-sheetdb-query-string=&quot;id&quot;</code> and add ?id=3 to the url you will get filtered data and display only results with id=3.</p>
+<h3 id='here-is-the-result-of-example-code'>Here is the result of example code:</h3>
+<p>After entering your ID, watch what&#39;s happening in the address bar. After you submit, <code>?id=xxx</code> will be added to the url. This change in the url causes this feature to work. You can also add this parameter to your links to filter data using query strings.</p>
+
+<form style="margin-right: 50%;
+    padding: 0 28px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;">
+  <input type="text" name="id" placeholder="Enter the ID (ex. 1, 2, 3)" style="padding: 4px 10px;">
+  <input type="submit" style="padding: 4px 10px;">
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Age</td>
+      <td>Comment</td>
+    </tr>
+  </thead>
+  <tbody data-sheetdb-url="https://sheetdb.io/api/v1/58f61be4dda40"
+         data-sheetdb-query-string="id">
+    <tr>
+      <td>{{id}}</td>
+      <td>{{name}}</td>
+      <td>{{age}}</td>
+      <td>{{comment}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"></script>
 <h1 id='caching'>Caching</h1><h2 id='how-do-we-cache-your-data'>How do we cache your data</h2>
-<p>By default, we cache your API data for 30 seconds. You can change this period in API settings up to 7 days. Caching guarantees the fastest response time, especially for a large number of requests.</p>
+<p>By default, we cache your API data for 30 seconds. If you are on paid plan you can change this period in API settings up to 7 days. Caching guarantees the fastest response time, especially for a large number of requests.</p>
+
+<p>When cache is enabled, changes to the spreadsheet are not reflected in the API&#39;s until the cache expires, or until you make changes to the spreadsheet using SheetDB API. There is also an endpoint to reset cache in API settings.</p>
+
+<p><strong>Example:</strong></p>
+
+<ul>
+<li><p>If you have cache enabled for 7 days and one day later you change the content in the Google Spreadsheet website, for the next 6 days, GET endpoint will return <strong>the old data!</strong> You can use purge endpoint to manually reset the cache.</p></li>
+<li><p>If you modify a spreadsheet using SheetDB API - for example with the POST request, the cache will be cleared for you and after the change your GET requests will return new content immediately.</p></li>
+</ul>
 <h1 id='data-safety'>Data safety</h1><h2 id='how-do-we-protect-your-data'>How do we protect your data</h2>
 <p>The confidentiality of your data is very important to us, which is why we do not store any of your data on our servers, other than API data for caching reasons. Also, for people without an API URL, guessing is almost impossible, but if you still need more protection, you can enable <a href="#authentication">Basic Auth</a>.</p>
 

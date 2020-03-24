@@ -73,3 +73,69 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
   </tbody>
 </table>
 <script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"></script>
+
+## Query strings
+
+```html
+<form>
+  <input type="text" name="id" placeholder="Enter the ID">
+  <input type="submit">
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Age</td>
+      <td>Comment</td>
+    </tr>
+  </thead>
+  <tbody data-sheetdb-url="https://sheetdb.io/api/v1/58f61be4dda40"
+         data-sheetdb-query-string="id">
+    <tr>
+      <td>{{id}}</td>
+      <td>{{name}}</td>
+      <td>{{age}}</td>
+      <td>{{comment}}</td>
+    </tr>
+  </tbody>
+</table>
+<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"></script>
+```
+
+To change content dynamically you can use query strings. If you add `data-sheetdb-query-string` and specify the parameter you want to filter by, you can add query to the address bar. For example if you use `data-sheetdb-query-string="id"` and add ?id=3 to the url you will get filtered data and display only results with id=3.
+
+### Here is the result of example code:
+
+After entering your ID, watch what's happening in the address bar. After you submit, `?id=xxx` will be added to the url. This change in the url causes this feature to work. You can also add this parameter to your links to filter data using query strings.
+
+<form style="margin-right: 50%;
+    padding: 0 28px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;">
+  <input type="text" name="id" placeholder="Enter the ID (ex. 1, 2, 3)" style="padding: 4px 10px;">
+  <input type="submit" style="padding: 4px 10px;">
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Age</td>
+      <td>Comment</td>
+    </tr>
+  </thead>
+  <tbody data-sheetdb-url="https://sheetdb.io/api/v1/58f61be4dda40"
+         data-sheetdb-query-string="id">
+    <tr>
+      <td>{{id}}</td>
+      <td>{{name}}</td>
+      <td>{{age}}</td>
+      <td>{{comment}}</td>
+    </tr>
+  </tbody>
+</table>
+<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"></script>
