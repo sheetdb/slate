@@ -12,5 +12,5 @@ Status Code | Meaning
 402 Payment Required | Payment is required to process the request.
 403 Forbidden | Action is forbidden.
 404 Not Found | The server did not find anything matching the request.
-429 Too Many Requests | Exhausted limit requests. [Upgrade your plan.](https://sheetdb.io/pricing)
+429 Too Many Requests | Exhausted limit requests. [Check API limits](#api-limits)
 500 Internal Server Error | We had a problem with our server. Try again later.
