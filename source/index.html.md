@@ -15,8 +15,6 @@ includes:
   - restful_api
   - multiple_sheets
   - handlebars
-  - caching
-  - data_safety
   - other
 
 search: true
@@ -24,7 +22,7 @@ search: true
 
 # Introduction
 
-Each spreadsheet document you want to access must be configured in the SheetDB panel as an API. After creating the API, you'll receive a unique http address. You can send RESTful requests to read, create, update or delete rows. The rest of the documentation explains how each request works and what you will receive in response.
+Each spreadsheet document you want to access must be configured in the SheetDB panel as an API. After creating the API, you'll receive a unique https address. You can send RESTful requests to read, create, update or delete rows. The rest of the documentation explains how each request works and what can you expect as a response.
 
 You can choose your preferred programming language in the upper right corner.
 
@@ -35,9 +33,9 @@ You can choose your preferred programming language in the upper right corner.
 
 # Installation
 
-No configuration needed. As long as you can send HTTP requests and use the JSON format, you're good to go!
+Make an API at our dashboard. Just paste the URL to the spreadsheet.
 
-You can also use one of our Libraries.
+You can use one of our Libraries:
 
 WordPress plugin: [SheetDB on WordPress](https://wordpress.org/plugins/sheetdb/)<br />
 JavaScript: [Google Spreadsheet API for JavaScript on GitHub](https://github.com/sheetdb/sheetdb-js)<br />

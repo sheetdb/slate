@@ -345,25 +345,6 @@
               </ul>
           </li>
           <li>
-            <a href="#caching" class="toc-h1 toc-link" data-title="Caching">Caching</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#how-do-we-cache-your-data" class="toc-h2 toc-link" data-title="How do we cache your data">How do we cache your data</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#data-safety" class="toc-h1 toc-link" data-title="Data safety">Data safety</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#how-do-we-protect-your-data" class="toc-h2 toc-link" data-title="How do we protect your data">How do we protect your data</a>
-                  </li>
-                  <li>
-                    <a href="#what-does-sheetdb-have-access-to" class="toc-h2 toc-link" data-title="What does SheetDB have access to?">What does SheetDB have access to?</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
             <a href="#other" class="toc-h1 toc-link" data-title="Other">Other</a>
               <ul class="toc-list-h2">
                   <li>
@@ -373,7 +354,13 @@
                     <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
                   </li>
                   <li>
-                    <a href="#api-rate-limits" class="toc-h2 toc-link" data-title="API Rate Limits">API Rate Limits</a>
+                    <a href="#api-limits" class="toc-h2 toc-link" data-title="API Limits">API Limits</a>
+                  </li>
+                  <li>
+                    <a href="#caching" class="toc-h2 toc-link" data-title="Caching">Caching</a>
+                  </li>
+                  <li>
+                    <a href="#data-safety" class="toc-h2 toc-link" data-title="Data safety">Data safety</a>
                   </li>
                   <li>
                     <a href="#we-are-here-for-you" class="toc-h2 toc-link" data-title="We are here for you!">We are here for you!</a>
@@ -390,7 +377,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Each spreadsheet document you want to access must be configured in the SheetDB panel as an API. After creating the API, you&#39;ll receive a unique http address. You can send RESTful requests to read, create, update or delete rows. The rest of the documentation explains how each request works and what you will receive in response.</p>
+<p>Each spreadsheet document you want to access must be configured in the SheetDB panel as an API. After creating the API, you&#39;ll receive a unique https address. You can send RESTful requests to read, create, update or delete rows. The rest of the documentation explains how each request works and what can you expect as a response.</p>
 
 <p>You can choose your preferred programming language in the upper right corner.</p>
 
@@ -401,9 +388,9 @@
 <li>Pure HTML - to learn how to use SheetDB with only HTML <a href="#handlebars-installation">go to Handlebars</a></li>
 </ul>
 <h1 id='installation'>Installation</h1>
-<p>No configuration needed. As long as you can send HTTP requests and use the JSON format, you&#39;re good to go!</p>
+<p>Make an API at our dashboard. Just paste the URL to the spreadsheet.</p>
 
-<p>You can also use one of our Libraries.</p>
+<p>You can use one of our Libraries:</p>
 
 <p>WordPress plugin: <a href="https://wordpress.org/plugins/sheetdb/">SheetDB on WordPress</a><br />
 JavaScript: <a href="https://github.com/sheetdb/sheetdb-js">Google Spreadsheet API for JavaScript on GitHub</a><br />
@@ -1328,23 +1315,6 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
 </table>
 
 <script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"></script>
-<h1 id='caching'>Caching</h1><h2 id='how-do-we-cache-your-data'>How do we cache your data</h2>
-<p>By default, we cache your API data for 30 seconds. If you are on paid plan you can change this period in API settings up to 7 days. Caching guarantees the fastest response time, especially for a large number of requests.</p>
-
-<p>When cache is enabled, changes to the spreadsheet are not reflected in the API&#39;s until the cache expires, or until you make changes to the spreadsheet using SheetDB API. There is also an endpoint to reset cache in API settings.</p>
-
-<p><strong>Example:</strong></p>
-
-<ul>
-<li><p>If you have cache enabled for 7 days and one day later you change the content in the Google Spreadsheet website, for the next 6 days, GET endpoint will return <strong>the old data!</strong> You can use purge endpoint to manually reset the cache.</p></li>
-<li><p>If you modify a spreadsheet using SheetDB API - for example with the POST request, the cache will be cleared for you and after the change your GET requests will return new content immediately.</p></li>
-</ul>
-<h1 id='data-safety'>Data safety</h1><h2 id='how-do-we-protect-your-data'>How do we protect your data</h2>
-<p>The confidentiality of your data is very important to us, which is why we do not store any of your data on our servers, other than API data for caching reasons. Also, for people without an API URL, guessing is almost impossible, but if you still need more protection, you can enable <a href="#authentication">Basic Auth</a>.</p>
-
-<p>We use the best tools and services available to protect your data.</p>
-<h2 id='what-does-sheetdb-have-access-to'>What does SheetDB have access to?</h2>
-<p>SheetDB can only access spreadsheets for which the API has been created. This means that SheetDB do not have access to your other files.</p>
 <h1 id='other'>Other</h1><h2 id='value-input-option'>Value Input Option</h2>
 <p>To your POST, PUT and PATCH (create and update) requests, you can add optional <code>mode</code> parameter. It controls whether input strings are parsed or not, as described in the following:</p>
 
@@ -1355,8 +1325,36 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
 <p>You can add HTTP Basic Auth to each API as an additional security for your API&#39;s. You can enable it on the API Settings tab.</p>
 
 <p>You will receive a <em>login</em> and <em>password</em>. You have to send it for every request that has basic authentication enabled. If the credentials are incorrect API will respond with error <code>401 Unauthorized</code>.</p>
-<h2 id='api-rate-limits'>API Rate Limits</h2>
-<p>After you hit your rate limit, your requests will recive <code>429 Too Many Requests</code>. You can check limits in <a href="https://sheetdb.io/pricing">pricing page</a>.</p>
+<h2 id='api-limits'>API Limits</h2>
+<p>After you hit your rate limit, your requests will recive <code>429 Too Many Requests</code>. You can check limits at <a href="https://sheetdb.io/pricing">pricing page</a>.</p>
+
+<p>There are 2 more limits:</p>
+
+<ul>
+<li>2,000 requests per user (for 100 seconds)</li>
+<li>variable limit of requests per one spreadsheet (for 100 seconds)</li>
+</ul>
+
+<p>Both are limits imposed by Google and cannot be changed. If you need more, best solution is enabling cache. SheetDB limit will be calculated as usual, however Google limits do not apply because in the case of cache results we do not query Google servers. In this case remember to set the cache for longer than you plan to poll this request.</p>
+
+<p><strong>Make the first request before a larger batch to prepare the cache.</strong></p>
+<h2 id='caching'>Caching</h2>
+<p>By default, we cache your API data for 30 seconds. If you are on paid plan you can change this period in API settings up to 7 days. Caching guarantees the fastest response time, especially for a large number of requests.</p>
+
+<p>When cache is enabled, changes to the spreadsheet are not reflected in the API&#39;s until the cache expires, or until you make changes to the spreadsheet using SheetDB API. There is also an endpoint to reset cache in API settings.</p>
+
+<p><strong>Example:</strong></p>
+
+<ul>
+<li><p>If you have cache enabled for 7 days and one day later you change the content in the Google Spreadsheet website, for the next 6 days, GET endpoint will return <strong>the old data!</strong> You can use purge endpoint to manually reset the cache.</p></li>
+<li><p>If you modify a spreadsheet using SheetDB API - for example with the POST request, the cache will be cleared for you and after the change your GET requests will return new content immediately.</p></li>
+</ul>
+<h2 id='data-safety'>Data safety</h2>
+<p>The confidentiality of your data is very important to us, which is why we do not store any of your data on our servers, other than API data for caching reasons. Also, for people without an API URL, guessing is almost impossible, but if you still need more protection, you can enable <a href="#authentication">Basic Auth</a>.</p>
+
+<p>We use the best tools and services available to protect your data.</p>
+<h3 id='what-does-sheetdb-have-access-to'>What does SheetDB have access to?</h3>
+<p>SheetDB can only access spreadsheets for which the API has been created. This means that SheetDB do not have access to your other files.</p>
 <h2 id='we-are-here-for-you'>We are here for you!</h2>
 <p>If you have any questions please feel free to ask via
 <a href="#" class=""
