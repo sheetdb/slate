@@ -16,7 +16,7 @@ You will receive a *login* and *password*. You have to send it for every request
 
 ## API Limits
 
-After you hit your rate limit, your requests will recive `429 Too Many Requests`. You can check limits at <a href="https://sheetdb.io/pricing">pricing page</a>.
+After you hit your rate limit, your requests will return an error: `429 Too Many Requests`. You can check limits at <a href="https://sheetdb.io/pricing">pricing page</a>.
 
 There are 2 more limits:
 
