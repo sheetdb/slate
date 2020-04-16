@@ -499,6 +499,8 @@ Update row(s) for given column and value. Similar to <a href="#get-search"># GET
 
 `PUT` requests will update entire row - some fields might get emptied.
 
+If you don't want to override some values you can exclude them using `ignore_columns` attribute. The value should be an array of column names that you want to exclude. Ex. `["id","name"]`
+
 It returns count of updated rows.
 
 ## PATCH/PUT - Batch update
