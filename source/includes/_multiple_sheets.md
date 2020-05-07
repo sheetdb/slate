@@ -181,7 +181,7 @@ $result = json_decode(
 `DELETE https://sheetdb.io/api/v1/58f61be4dda40/sheet`
 
 <aside class="notice">
-Tabs requests works only on plans premium and above.
+Tabs requests works only on paid plans premium and above.
 </aside>
 
 Deletes a sheet (tab) and the content. Requires one param:
