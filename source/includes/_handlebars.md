@@ -4,7 +4,7 @@
 
 Copy the following code and add it before the closing `</body>` tag.
 
-`<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"></script>`
+`<script src="https://sheetdb.io/handlebars.js"></script>`
 
 That's it. You are ready to use our handlebars snippet.
 
@@ -38,7 +38,7 @@ Now you can display data from your spreadsheet.
     </tr>
   </tbody>
 </table>
-<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"></script>
+<script src="https://sheetdb.io/handlebars.js"></script>
 ```
 
 * By default, you will receive data from the first sheet (tab). If you want to work with another sheet, use `data-sheetdb-sheet` and enter the name of the sheet (case sensitive).
@@ -72,7 +72,7 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
     </tr>
   </tbody>
 </table>
-<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"></script>
+<script src="https://sheetdb.io/handlebars.js"></script>
 
 ## Query strings
 
@@ -101,7 +101,7 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
     </tr>
   </tbody>
 </table>
-<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"></script>
+<script src="https://sheetdb.io/handlebars.js"></script>
 ```
 
 To change content dynamically you can use query strings. If you add `data-sheetdb-query-string` and specify the parameter you want to filter by, you can add query to the address bar. For example if you use `data-sheetdb-query-string="id"` and add ?id=3 to the url you will get filtered data and display only results with id=3.
@@ -138,4 +138,4 @@ After entering your ID, watch what's happening in the address bar. After you sub
     </tr>
   </tbody>
 </table>
-<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"></script>
+<script src="https://sheetdb.io/handlebars.js"></script>

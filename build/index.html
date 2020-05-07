@@ -1188,7 +1188,7 @@ Tabs requests works only on plans premium and above.
 <h1 id='our-handlebars-snippet'>Our handlebars snippet</h1><h2 id='handlebars-installation'>Handlebars Installation</h2>
 <p>Copy the following code and add it before the closing <code>&lt;/body&gt;</code> tag.</p>
 
-<p><code>&lt;script src=&quot;https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js&quot;&gt;&lt;/script&gt;</code></p>
+<p><code>&lt;script src=&quot;https://sheetdb.io/handlebars.js&quot;&gt;&lt;/script&gt;</code></p>
 
 <p>That&#39;s it. You are ready to use our handlebars snippet.</p>
 <h2 id='display-data'>Display data</h2>
@@ -1218,7 +1218,7 @@ Tabs requests works only on plans premium and above.
     <span class="nt">&lt;/tr&gt;</span>
   <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://sheetdb.io/handlebars.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre>
 <ul>
 <li>By default, you will receive data from the first sheet (tab). If you want to work with another sheet, use <code>data-sheetdb-sheet</code> and enter the name of the sheet (case sensitive).</li>
@@ -1252,7 +1252,7 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
   </tbody>
 </table>
 
-<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"></script>
+<script src="https://sheetdb.io/handlebars.js"></script>
 <h2 id='query-strings'>Query strings</h2><pre class="highlight html tab-html"><code><span class="nt">&lt;form&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"id"</span> <span class="na">placeholder=</span><span class="s">"Enter the ID"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>
@@ -1277,7 +1277,7 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
     <span class="nt">&lt;/tr&gt;</span>
   <span class="nt">&lt;/tbody&gt;</span>
 <span class="nt">&lt;/table&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://sheetdb.io/handlebars.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </code></pre>
 <p>To change content dynamically you can use query strings. If you add <code>data-sheetdb-query-string</code> and specify the parameter you want to filter by, you can add query to the address bar. For example if you use <code>data-sheetdb-query-string=&quot;id&quot;</code> and add ?id=3 to the url you will get filtered data and display only results with id=3.</p>
 <h3 id='here-is-the-result-of-example-code'>Here is the result of example code:</h3>
@@ -1312,7 +1312,7 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
   </tbody>
 </table>
 
-<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"></script>
+<script src="https://sheetdb.io/handlebars.js"></script>
 <h1 id='other'>Other</h1><h2 id='value-input-option'>Value Input Option</h2>
 <p>To your POST, PUT and PATCH (create and update) requests, you can add optional <code>mode</code> parameter. It controls whether input strings are parsed or not, as described in the following:</p>
 
