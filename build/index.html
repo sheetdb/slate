@@ -723,7 +723,8 @@ Wildcard work only when READ and SEARCH permissions are both enabled, if only SE
 
 <p>You can use multiple queries for the same column, but you must use array notation (<code>[]</code> at the end of the variable name), for example: <a href="https://sheetdb.io/api/v1/58f61be4dda40/search?name[]=!Tom&amp;name[]=!Steve">https://sheetdb.io/api/v1/58f61be4dda40/search?name[]=!Tom&amp;name[]=!Steve</a></p>
 
-<p>If you want to search for a string with a space, just repace space with <code>%20</code></p>
+<p>If you want to search for a string with a space, just repace space with <code>%20</code>
+If you want to include &amp; symbol in your query, replace it with <code>%26</code></p>
 
 <p>You can use optional parameters:</p>
 
@@ -780,7 +781,8 @@ Wildcard work only when READ and SEARCH permissions are both enabled, if only SE
 
 <p>You can use multiple queries for the same column, but you must use array notation (<code>[]</code> at the end of the variable name), for example: <a href="https://sheetdb.io/api/v1/58f61be4dda40/search_or?name[]=Tom&amp;name[]=Steve">https://sheetdb.io/api/v1/58f61be4dda40/search_or?name[]=Tom&amp;name[]=Steve</a></p>
 
-<p>If you want to search for a string with a space, just repace space with <code>%20</code></p>
+<p>If you want to search for a string with a space, just repace space with <code>%20</code>
+If you want to include &amp; symbol in your query, replace it with <code>%26</code></p>
 
 <p>You can use optional parameters:</p>
 
@@ -1177,7 +1179,7 @@ Tabs requests works only on plans premium and above.
 <p><code>DELETE https://sheetdb.io/api/v1/58f61be4dda40/sheet</code></p>
 
 <aside class="notice">
-Tabs requests works only on plans premium and above.
+Tabs requests works only on paid plans premium and above.
 </aside>
 
 <p>Deletes a sheet (tab) and the content. Requires one param:</p>

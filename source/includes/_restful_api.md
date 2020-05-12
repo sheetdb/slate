@@ -304,6 +304,7 @@ If you want to exclude rows from the search results, use an exclamation mark bef
 You can use multiple queries for the same column, but you must use array notation (`[]` at the end of the variable name), for example: [https://sheetdb.io/api/v1/58f61be4dda40/search?name[]=!Tom&name[]=!Steve](https://sheetdb.io/api/v1/58f61be4dda40/search?name[]=!Tom&name[]=!Steve)
 
 If you want to search for a string with a space, just repace space with `%20`
+If you want to include & symbol in your query, replace it with `%26`
 
 You can use optional parameters:
 
@@ -371,6 +372,7 @@ Wildcard work only when READ and SEARCH permissions are both enabled, if only SE
 You can use multiple queries for the same column, but you must use array notation (`[]` at the end of the variable name), for example: [https://sheetdb.io/api/v1/58f61be4dda40/search_or?name[]=Tom&name[]=Steve](https://sheetdb.io/api/v1/58f61be4dda40/search_or?name[]=Tom&name[]=Steve)
 
 If you want to search for a string with a space, just repace space with `%20`
+If you want to include & symbol in your query, replace it with `%26`
 
 You can use optional parameters:
 
