@@ -562,7 +562,7 @@ $result = json_decode(
 }
 ```
 
-`PATCH/PUT https://sheetdb.io/api/v1/batch_update`
+`PATCH/PUT https://sheetdb.io/api/v1/58f61be4dda40/batch_update`
 
 <aside class="notice">
 Batch update works only on paid accounts.

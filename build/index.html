@@ -938,7 +938,7 @@ Replace <code>{column}</code> and <code>{value}</code> with your values (without
   </span><span class="s2">"updated"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p><code>PATCH/PUT https://sheetdb.io/api/v1/batch_update</code></p>
+<p><code>PATCH/PUT https://sheetdb.io/api/v1/58f61be4dda40/batch_update</code></p>
 
 <aside class="notice">
 Batch update works only on paid accounts.
@@ -1323,7 +1323,7 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
 <p><code>RAW</code> - The input is not parsed and is simply inserted as a string, so the input &quot;=1+2&quot; places the string &quot;=1+2&quot; in the cell, not a formula. (Non-string values like booleans or numbers are always handled as RAW.)</p>
 
 <aside class="notice">
-<strong>Warning:</strong> if you use RAW to update, other formulas will be converted into strings
+<strong>Warning:</strong> If you use RAW for updating, other formulas in the row will be converted to strings.
 </aside>
 <h2 id='authentication'>Authentication</h2>
 <p>You can add HTTP Basic Auth to each API as an additional security for your API&#39;s. You can enable it on the API Settings tab.</p>

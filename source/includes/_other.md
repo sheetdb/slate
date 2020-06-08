@@ -9,7 +9,7 @@ To your POST, PUT and PATCH (create and update) requests, you can add optional `
 `RAW` - The input is not parsed and is simply inserted as a string, so the input "=1+2" places the string "=1+2" in the cell, not a formula. (Non-string values like booleans or numbers are always handled as RAW.)
 
 <aside class="notice">
-<strong>Warning:</strong> if you use RAW to update, other formulas will be converted into strings
+<strong>Warning:</strong> If you use RAW for updating, other formulas in the row will be converted to strings.
 </aside>
 
 ## Authentication
