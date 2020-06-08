@@ -4,9 +4,13 @@
 
 To your POST, PUT and PATCH (create and update) requests, you can add optional `mode` parameter. It controls whether input strings are parsed or not, as described in the following:
 
-`RAW` (default) - The input is not parsed and is simply inserted as a string, so the input "=1+2" places the string "=1+2" in the cell, not a formula. (Non-string values like booleans or numbers are always handled as RAW.)
+`USER_ENTERED` (default) - The input is parsed exactly as if it were entered into the Google Sheets UI, so "Mar 1 2016" becomes a date, and "=1+2" becomes a formula. Formats may also be inferred, so "$100.15" becomes a number with currency formatting.
 
-`USER_ENTERED` - The input is parsed exactly as if it were entered into the Google Sheets UI, so "Mar 1 2016" becomes a date, and "=1+2" becomes a formula. Formats may also be inferred, so "$100.15" becomes a number with currency formatting.
+`RAW` - The input is not parsed and is simply inserted as a string, so the input "=1+2" places the string "=1+2" in the cell, not a formula. (Non-string values like booleans or numbers are always handled as RAW.)
+
+<aside class="notice">
+<strong>Warning:</strong> if you use RAW to update, other formulas will be converted into strings
+</aside>
 
 ## Authentication
 
