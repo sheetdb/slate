@@ -82,6 +82,7 @@ You can use optional parameters:
 * `sort_by` - the column you want to sort by
 * `sort_order` - sort in `asc` or `desc` order
 * `sort_method` - if you want to sort by date, set this parameter to `date`, it will automatically detect the date format
+* `cast_numbers` - if you want to cast the value to a number, add column names separated by commas. Example: [https://sheetdb.io/api/v1/58f61be4dda40?cast_numbers=id,age](https://sheetdb.io/api/v1/58f61be4dda40?cast_numbers=id,age)
 
 ## GET - Keys
 
@@ -314,6 +315,7 @@ You can use optional parameters:
 * `sort_order` - sort in `asc` or `desc` order
 * `sort_method` - if you want to sort by date, set this parameter to `date`, it will automatically detect the date format
 * `casesensitive` - by default search is not case sensitive, to make it case sensitive set this parameter to `true`
+* `cast_numbers` - if you want to cast the value to a number, add column names separated by commas. Example: [https://sheetdb.io/api/v1/58f61be4dda40?cast_numbers=id,age](https://sheetdb.io/api/v1/58f61be4dda40?cast_numbers=id,age)
 
 ## GET - Search OR in document
 
@@ -382,6 +384,7 @@ You can use optional parameters:
 * `sort_order` - sort in `asc` or `desc` order
 * `sort_method` - if you want to sort by date, set this parameter to `date`, it will automatically detect the date format
 * `casesensitive` - by default search is not case sensitive, to make it case sensitive set this parameter to `true`
+* `cast_numbers` - if you want to cast the value to a number, add column names separated by commas. Example: [https://sheetdb.io/api/v1/58f61be4dda40?cast_numbers=id,age](https://sheetdb.io/api/v1/58f61be4dda40?cast_numbers=id,age)
 
 ## POST - Create row
 
