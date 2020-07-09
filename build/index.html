@@ -1326,6 +1326,10 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
 <p><code>RAW</code> - The input is not parsed and is simply inserted as a string, so the input &quot;=1+2&quot; places the string &quot;=1+2&quot; in the cell, not a formula. (Non-string values like booleans or numbers are always handled as RAW.)</p>
 
 <aside class="notice">
+If you want to search for formula values, use the RAW mode.
+</aside>
+
+<aside class="notice">
 <strong>Warning:</strong> If you use RAW for updating, other formulas in the row will be converted to strings.
 </aside>
 <h2 id='authentication'>Authentication</h2>
