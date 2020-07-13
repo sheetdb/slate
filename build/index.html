@@ -348,6 +348,9 @@
             <a href="#other" class="toc-h1 toc-link" data-title="Other">Other</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#value-render-option" class="toc-h2 toc-link" data-title="Value Render Option">Value Render Option</a>
+                  </li>
+                  <li>
                     <a href="#value-input-option" class="toc-h2 toc-link" data-title="Value Input Option">Value Input Option</a>
                   </li>
                   <li>
@@ -1318,7 +1321,15 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
 </table>
 
 <script src="https://sheetdb.io/handlebars.js"></script>
-<h1 id='other'>Other</h1><h2 id='value-input-option'>Value Input Option</h2>
+<h1 id='other'>Other</h1><h2 id='value-render-option'>Value Render Option</h2>
+<p>To your GET (get and search) requests, you can add optional <code>mode</code> parameter. It controls how values should be rendered in the output, as described in the following:</p>
+
+<p><code>FORMATTED_VALUE</code> (default) - Values will be calculated &amp; formatted in the reply according to the cell&#39;s formatting. Formatting is based on the spreadsheet&#39;s locale, not the requesting user&#39;s locale. For example, if A1 is 1.23 and A2 is =A1 and formatted as currency, then A2 would return &quot;$1.23&quot;.</p>
+
+<p><code>UNFORMATTED_VALUE</code> - Values will be calculated, but not formatted in the reply. For example, if A1 is 1.23 and A2 is =A1 and formatted as currency, then A2 would return the number 1.23.</p>
+
+<p><code>FORMULA</code> - Values will not be calculated. The reply will include the formulas. For example, if A1 is 1.23 and A2 is =A1 and formatted as currency, then A2 would return &quot;=A1&quot;.</p>
+<h2 id='value-input-option'>Value Input Option</h2>
 <p>To your POST, PUT and PATCH (create and update) requests, you can add optional <code>mode</code> parameter. It controls whether input strings are parsed or not, as described in the following:</p>
 
 <p><code>USER_ENTERED</code> (default) - The input is parsed exactly as if it were entered into the Google Sheets UI, so &quot;Mar 1 2016&quot; becomes a date, and &quot;=1+2&quot; becomes a formula. Formats may also be inferred, so &quot;$100.15&quot; becomes a number with currency formatting.</p>

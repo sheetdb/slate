@@ -1,5 +1,15 @@
 # Other
 
+## Value Render Option
+
+To your GET (get and search) requests, you can add optional `mode` parameter. It controls how values should be rendered in the output, as described in the following:
+
+`FORMATTED_VALUE` (default) - Values will be calculated & formatted in the reply according to the cell's formatting. Formatting is based on the spreadsheet's locale, not the requesting user's locale. For example, if A1 is 1.23 and A2 is =A1 and formatted as currency, then A2 would return "$1.23".
+
+`UNFORMATTED_VALUE` - Values will be calculated, but not formatted in the reply. For example, if A1 is 1.23 and A2 is =A1 and formatted as currency, then A2 would return the number 1.23.
+
+`FORMULA` - Values will not be calculated. The reply will include the formulas. For example, if A1 is 1.23 and A2 is =A1 and formatted as currency, then A2 would return "=A1".
+
 ## Value Input Option
 
 To your POST, PUT and PATCH (create and update) requests, you can add optional `mode` parameter. It controls whether input strings are parsed or not, as described in the following:
