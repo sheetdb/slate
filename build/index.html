@@ -303,7 +303,7 @@
                     <a href="#post-create-row" class="toc-h2 toc-link" data-title="POST - Create row">POST - Create row</a>
                   </li>
                   <li>
-                    <a href="#patch-put-update" class="toc-h2 toc-link" data-title="PATCH/PUT - update">PATCH/PUT - update</a>
+                    <a href="#patch-put-update" class="toc-h2 toc-link" data-title="PATCH/PUT - Update">PATCH/PUT - Update</a>
                   </li>
                   <li>
                     <a href="#patch-put-batch-update" class="toc-h2 toc-link" data-title="PATCH/PUT - Batch update">PATCH/PUT - Batch update</a>
@@ -845,7 +845,7 @@ If you want to include &amp; symbol in your query, replace it with <code>%26</co
 <p>You can use value <code>INCREMENT</code> (upper case). SheetDB will look for the biggest number in the given column and increase by 1.</p>
 
 <p>API will return the number of created rows with status code <code>201 Created</code>.</p>
-<h2 id='patch-put-update'>PATCH/PUT - update</h2><pre class="highlight shell tab-shell"><code>curl -X PATCH -H <span class="s2">"Content-Type: application/json"</span> https://sheetdb.io/api/v1/58f61be4dda40/id/61 -d <span class="s1">'{"data":[{ "name": "Scott", "age": "25" }]}'</span>
+<h2 id='patch-put-update'>PATCH/PUT - Update</h2><pre class="highlight shell tab-shell"><code>curl -X PATCH -H <span class="s2">"Content-Type: application/json"</span> https://sheetdb.io/api/v1/58f61be4dda40/id/61 -d <span class="s1">'{"data":[{ "name": "Scott", "age": "25" }]}'</span>
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$data</span> <span class="o">=</span> <span class="nb">http_build_query</span><span class="p">(</span>
     <span class="p">[</span>

@@ -443,7 +443,7 @@ You can use value `INCREMENT` (upper case). SheetDB will look for the biggest nu
 
 API will return the number of created rows with status code `201 Created`.
 
-## PATCH/PUT - update
+## PATCH/PUT - Update
 
 ```shell
 curl -X PATCH -H "Content-Type: application/json" https://sheetdb.io/api/v1/58f61be4dda40/id/61 -d '{"data":[{ "name": "Scott", "age": "25" }]}'
