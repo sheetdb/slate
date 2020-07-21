@@ -891,9 +891,7 @@ Replace <code>{column}</code> and <code>{value}</code> with your values (without
 
 <p>Update row(s) for given column and value. Similar to <a href="#get-search"># GET - Search</a> you must specify a key (column name) and value to find. Any rows that match the condition will be updated.</p>
 
-<p><code>PATCH</code> requests will update only values passed in data object.</p>
-
-<p><code>PUT</code> requests will update entire row - some fields might get emptied.</p>
+<p>Requests will update only values passed in data object.</p>
 
 <p>It returns count of updated rows.</p>
 <h2 id='patch-put-batch-update'>PATCH/PUT - Batch update</h2><pre class="highlight shell tab-shell"><code>curl -X PATCH -H <span class="s2">"Content-Type: application/json"</span> https://sheetdb.io/api/v1/58f61be4dda40/batch_update -d <span class="s1">'{"data":[{"query":"id=1", "name":"Mathew", "age":20},{"query":"id=2", "age":25}]}'</span>
@@ -966,9 +964,7 @@ Batch update works only on paid accounts.
 ]
 </code></p>
 
-<p><code>PATCH</code> requests will update only values passed in data object.</p>
-
-<p><code>PUT</code> requests will update entire row - some fields might get emptied.</p>
+<p>Requests will update only values passed in data object.</p>
 
 <p>It returns count of updated rows.</p>
 <h2 id='delete'>DELETE</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE -H <span class="s2">"Content-Type: application/json"</span> https://sheetdb.io/api/v1/58f61be4dda40/id/61<span class="s1">'
@@ -1335,14 +1331,6 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
 <p><code>USER_ENTERED</code> (default) - The input is parsed exactly as if it were entered into the Google Sheets UI, so &quot;Mar 1 2016&quot; becomes a date, and &quot;=1+2&quot; becomes a formula. Formats may also be inferred, so &quot;$100.15&quot; becomes a number with currency formatting.</p>
 
 <p><code>RAW</code> - The input is not parsed and is simply inserted as a string, so the input &quot;=1+2&quot; places the string &quot;=1+2&quot; in the cell, not a formula. (Non-string values like booleans or numbers are always handled as RAW.)</p>
-
-<aside class="notice">
-If you want to search for formula values, use the RAW mode.
-</aside>
-
-<aside class="notice">
-<strong>Warning:</strong> If you use RAW for updating, other formulas in the row will be converted to strings.
-</aside>
 <h2 id='authentication'>Authentication</h2>
 <p>You can add HTTP Basic Auth to each API as an additional security for your API&#39;s. You can enable it on the API Settings tab.</p>
 

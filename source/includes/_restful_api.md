@@ -500,9 +500,7 @@ Replace <code>{column}</code> and <code>{value}</code> with your values (without
 
 Update row(s) for given column and value. Similar to <a href="#get-search"># GET - Search</a> you must specify a key (column name) and value to find. Any rows that match the condition will be updated.
 
-`PATCH` requests will update only values passed in data object.
-
-`PUT` requests will update entire row - some fields might get emptied.
+Requests will update only values passed in data object.
 
 It returns count of updated rows.
 
@@ -587,9 +585,7 @@ Update for various queries. You have to add an `data` param to your request. Eac
 ]
 </code>
 
-`PATCH` requests will update only values passed in data object.
-
-`PUT` requests will update entire row - some fields might get emptied.
+Requests will update only values passed in data object.
 
 It returns count of updated rows.
 
