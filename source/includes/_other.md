@@ -37,7 +37,7 @@ Both are limits imposed by Google and cannot be changed. If you need more, best 
 
 **Make the first request before a larger batch to prepare the cache.**
 
-Additionally, there is a limit - 60 requests per 10 seconds from one IP address. If you need more [contact with us](mailto:support@sheetdb.io).
+Additionally, there is a limit - 60 requests per 10 seconds from one IP address. If you need more please [contact us](mailto:support@sheetdb.io).
 
 ## Caching
 
