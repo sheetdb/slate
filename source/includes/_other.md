@@ -37,6 +37,8 @@ Both are limits imposed by Google and cannot be changed. If you need more, best 
 
 **Make the first request before a larger batch to prepare the cache.**
 
+Additionally, there is a limit - 60 requests per 10 seconds from one IP address. If you need more [contact with us](mailto:support@sheetdb.io).
+
 ## Caching
 
 By default, we cache your API data for 30 seconds. If you are on paid plan you can change this period in API settings up to 7 days. Caching guarantees the fastest response time, especially for a large number of requests.
