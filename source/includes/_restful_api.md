@@ -636,6 +636,10 @@ Delete row(s) for given column and value. Similar to <a href="#get-search"># GET
 
 It returns count of deleted rows.
 
+You can use optional parameters:
+
+* `limit` - the number of rows to delete. When dealing with a large spreadsheet and a large number of rows to delete, is's recommended to use limit.
+
 ## DELETE - All content
 
 ```shell

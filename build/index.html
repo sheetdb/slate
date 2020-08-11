@@ -1006,6 +1006,12 @@ Replace <code>{column}</code> and <code>{value}</code> with your values (without
 <p>Delete row(s) for given column and value. Similar to <a href="#get-search"># GET - Search</a> you must specify a key (column name) and value to find. Any rows that match the condition will be deleted.</p>
 
 <p>It returns count of deleted rows.</p>
+
+<p>You can use optional parameters:</p>
+
+<ul>
+<li><code>limit</code> - the number of rows to delete. When dealing with a large spreadsheet and a large number of rows to delete, is&#39;s recommended to use limit.</li>
+</ul>
 <h2 id='delete-all-content'>DELETE - All content</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE -H <span class="s2">"Content-Type: application/json"</span> https://sheetdb.io/api/v1/58f61be4dda40/all
 </code></pre><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$options</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
