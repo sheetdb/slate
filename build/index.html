@@ -569,6 +569,7 @@ curl https://sheetdb.io/api/v1/58f61be4dda40?sort_by<span class="o">=</span>name
 <li><code>sort_order</code> - sort in <code>asc</code> or <code>desc</code> order</li>
 <li><code>sort_method</code> - if you want to sort by date, set this parameter to <code>date</code>, it will automatically detect the date format</li>
 <li><code>cast_numbers</code> - if you want to cast the value to a number, add column names separated by commas. Example: <a href="https://sheetdb.io/api/v1/58f61be4dda40?cast_numbers=id,age">https://sheetdb.io/api/v1/58f61be4dda40?cast_numbers=id,age</a></li>
+<li><code>single_object</code> - if you want to get ony one item as an object (not in the array), set this parameter to <code>true</code></li>
 </ul>
 <h2 id='get-keys'>GET - Keys</h2><pre class="highlight shell tab-shell"><code><span class="c"># Get keys</span>
 curl https://sheetdb.io/api/v1/58f61be4dda40/keys
