@@ -438,7 +438,9 @@ $result = json_decode(
 
 `POST https://sheetdb.io/api/v1/58f61be4dda40`
 
-Create rows in document. Your request should contain `data` parameter - it should be an array of rows. Keys inside the object should be a column names (see <a href="#get-keys"># GET - keys</a>) and values will be values inside a spreadsheet. Rows will be added at the end of spreadsheet. If you want to add a single row, simply send an array with one item `{"data": [{"id":5,"name":"Frank"}]})`.
+Create rows in document. Your request should contain `data` parameter - it should be an array of rows. Keys inside the object should be a column names (see <a href="#get-keys"># GET - keys</a>) and values will be values inside a spreadsheet. Rows will be added at the end of spreadsheet. If you want to add a single row, simply send an array with one item `{"data": [{"id":5,"name":"Frank"}]}`.
+
+You can also add multiple rows at once using an array of objects. Example: `{"data": [{"id":5,"name":"Frank"},{"id":6,"name":"Marc"}]}`
 
 You can use value `INCREMENT` (upper case). SheetDB will look for the biggest number in the given column and increase by 1.
 
