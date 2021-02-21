@@ -845,7 +845,9 @@ If you want to include &amp; symbol in your query, replace it with <code>%26</co
 </span></code></pre>
 <p><code>POST https://sheetdb.io/api/v1/58f61be4dda40</code></p>
 
-<p>Create rows in document. Your request should contain <code>data</code> parameter - it should be an array of rows. Keys inside the object should be a column names (see <a href="#get-keys"># GET - keys</a>) and values will be values inside a spreadsheet. Rows will be added at the end of spreadsheet. If you want to add a single row, simply send an array with one item <code>{&quot;data&quot;: [{&quot;id&quot;:5,&quot;name&quot;:&quot;Frank&quot;}]})</code>.</p>
+<p>Create rows in document. Your request should contain <code>data</code> parameter - it should be an array of rows. Keys inside the object should be a column names (see <a href="#get-keys"># GET - keys</a>) and values will be values inside a spreadsheet. Rows will be added at the end of spreadsheet. If you want to add a single row, simply send an array with one item <code>{&quot;data&quot;: [{&quot;id&quot;:5,&quot;name&quot;:&quot;Frank&quot;}]}</code>.</p>
+
+<p>You can also add multiple rows at once using an array of objects. Example: <code>{&quot;data&quot;: [{&quot;id&quot;:5,&quot;name&quot;:&quot;Frank&quot;},{&quot;id&quot;:6,&quot;name&quot;:&quot;Marc&quot;}]}</code></p>
 
 <p>You can use value <code>INCREMENT</code> (upper case). SheetDB will look for the biggest number in the given column and increase by 1.</p>
 
