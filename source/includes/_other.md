@@ -61,17 +61,6 @@ We use the best tools and services available to protect your data.
 
 SheetDB can only access spreadsheets for which the API has been created. This means that SheetDB do not have access to your other files.
 
-
-## We are here for you!
-
-If you have any questions please feel free to ask via
-<a href="#" class=""
-   data-name="support"
-   data-domain="sheetdb"
-   data-tld="io"
-   onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;">email</a>
-or inapp chat.
-
 ## This documentation is on GitHub
 
 If you'd like to correct or add something here, please [submit a pull request](https://github.com/sheetdb/docs/pulls).
@@ -82,3 +71,13 @@ If you'd like to correct or add something here, please [submit a pull request](h
 </a>
 
 <div style="height:200px;"></div>
+
+## We are here for you!
+
+If you have any questions please feel free to ask via
+<a href="#" class=""
+   data-name="support"
+   data-domain="sheetdb"
+   data-tld="io"
+   onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;">email</a>
+or inapp chat.
