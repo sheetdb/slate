@@ -231,7 +231,7 @@
 </style>
 
 
-    <link href="stylesheets/screen-8c4e61e5.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/screen-bbb6fd16.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print-c427a123.css" rel="stylesheet" media="print" />
       <script src="javascripts/all-dada656e.js"></script>
 
@@ -246,7 +246,7 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;php&quot;,&quot;html--javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;php&quot;,&quot;html--javascript&quot;,&quot;javascript--node&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -259,6 +259,7 @@
               <a href="#" data-language-name="shell">cURL</a>
               <a href="#" data-language-name="php">PHP</a>
               <a href="#" data-language-name="html--javascript">JavaScript</a>
+              <a href="#" data-language-name="javascript--node">Node.js</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -297,9 +298,6 @@
                   </li>
                   <li>
                     <a href="#get-search-in-document" class="toc-h2 toc-link" data-title="GET - Search in document">GET - Search in document</a>
-                  </li>
-                  <li>
-                    <a href="#get-search-or-in-document" class="toc-h2 toc-link" data-title="GET - Search OR in document">GET - Search OR in document</a>
                   </li>
                   <li>
                     <a href="#post-create-row" class="toc-h2 toc-link" data-title="POST - Create row">POST - Create row</a>
@@ -393,14 +391,16 @@
 <li>Shell - the command line</li>
 <li>PHP - examples in vanilla PHP, you can also use <a href="https://github.com/sheetdb/sheetdb-php">our composer library</a></li>
 <li>JavaScript - we recommend to use Axios library or <a href="https://github.com/sheetdb/sheetdb-js">our npm library</a></li>
+<li>Node.js - we recommend to use Axios library or <a href="https://github.com/sheetdb/sheetdb-node">our npm library</a></li>
 <li>Pure HTML - to learn how to use SheetDB with only HTML <a href="#handlebars-installation">go to Handlebars</a></li>
 </ul>
 <h1 id='installation'>Installation</h1>
 <p>You can use one of our Libraries:</p>
 
 <p>WordPress plugin: <a href="https://wordpress.org/plugins/sheetdb/">SheetDB on WordPress</a><br />
-JavaScript: <a href="https://github.com/sheetdb/sheetdb-js">Google Spreadsheet API for JavaScript on GitHub</a><br />
-PHP: <a href="https://github.com/sheetdb/sheetdb-php">Google Spreadsheet API for PHP on GitHub</a></p>
+JavaScript: <a href="https://github.com/sheetdb/sheetdb-js">Google Spreadsheet REST API for JavaScript on GitHub</a><br />
+PHP: <a href="https://github.com/sheetdb/sheetdb-php">Google Spreadsheet REST API for PHP on GitHub</a>
+Node.js <a href="https://github.com/sheetdb/sheetdb-node">Google Spreadsheet REST API for Node.js on GitHub</a></p>
 <h1 id='example-spreadsheet'>Example spreadsheet</h1>
 <p>You can play with our test API here: <a href="https://sheetdb.io/api/v1/58f61be4dda40">https://sheetdb.io/api/v1/58f61be4dda40</a></p>
 
@@ -539,6 +539,22 @@ curl https://sheetdb.io/api/v1/58f61be4dda40?sort_by<span class="o">=</span>name
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="kd">const</span> <span class="nx">sheetdb</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">sheetdb-node</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sheetdb</span><span class="p">({</span> <span class="na">address</span><span class="p">:</span> <span class="dl">'</span><span class="s1">58f61be4dda40</span><span class="dl">'</span> <span class="p">});</span>
+
+<span class="c1">// Read whole spreadsheet</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">read</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Read first two rows from sheet "Sheet2"</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">read</span><span class="p">({</span> <span class="na">limit</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="na">sheet</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Sheet2</span><span class="dl">"</span> <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <blockquote>
 <p>Example response:</p>
@@ -595,6 +611,14 @@ curl https://sheetdb.io/api/v1/58f61be4dda40/keys
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="kd">const</span> <span class="nx">sheetdb</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">sheetdb-node</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sheetdb</span><span class="p">({</span> <span class="na">address</span><span class="p">:</span> <span class="dl">'</span><span class="s1">58f61be4dda40</span><span class="dl">'</span> <span class="p">});</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">(</span><span class="dl">'</span><span class="s1">keys</span><span class="dl">'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <blockquote>
 <p>Example response:</p>
@@ -623,6 +647,14 @@ curl https://sheetdb.io/api/v1/58f61be4dda40/name
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="kd">const</span> <span class="nx">sheetdb</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">sheetdb-node</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sheetdb</span><span class="p">({</span> <span class="na">address</span><span class="p">:</span> <span class="dl">'</span><span class="s1">58f61be4dda40</span><span class="dl">'</span> <span class="p">});</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">(</span><span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <blockquote>
 <p>Example response:</p>
@@ -652,6 +684,14 @@ curl https://sheetdb.io/api/v1/58f61be4dda40/name
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="kd">const</span> <span class="nx">sheetdb</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">sheetdb-node</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sheetdb</span><span class="p">({</span> <span class="na">address</span><span class="p">:</span> <span class="dl">'</span><span class="s1">58f61be4dda40</span><span class="dl">'</span> <span class="p">});</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">(</span><span class="dl">'</span><span class="s1">sheets</span><span class="dl">'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <blockquote>
 <p>Example response:</p>
@@ -684,6 +724,14 @@ curl https://sheetdb.io/api/v1/58f61be4dda40/name
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="kd">const</span> <span class="nx">sheetdb</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">sheetdb-node</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sheetdb</span><span class="p">({</span> <span class="na">address</span><span class="p">:</span> <span class="dl">'</span><span class="s1">58f61be4dda40</span><span class="dl">'</span> <span class="p">});</span>
+
+<span class="nx">client</span><span class="p">.</span><span class="nx">endpoint</span><span class="p">(</span><span class="dl">'</span><span class="s1">count</span><span class="dl">'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <blockquote>
 <p>Example response:</p>
@@ -713,6 +761,27 @@ curl https://sheetdb.io/api/v1/58f61be4dda40/name
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="kd">const</span> <span class="nx">sheetdb</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">sheetdb-node</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sheetdb</span><span class="p">({</span> <span class="na">address</span><span class="p">:</span> <span class="dl">'</span><span class="s1">58f61be4dda40</span><span class="dl">'</span> <span class="p">});</span>
+
+<span class="c1">// Get all rows where column 'id' is 'foo' and column 'value' is 'bar'</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">read</span><span class="p">({</span> <span class="na">search</span><span class="p">:</span> <span class="p">{</span> <span class="na">id</span><span class="p">:</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Tom</span><span class="dl">"</span> <span class="p">}</span> <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Get first row where column 'player' is 'Smith',</span>
+<span class="c1">// column 'score' is '41' from sheet named "Sheet2"</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">read</span><span class="p">({</span>
+  <span class="na">limit</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="na">search</span><span class="p">:</span> <span class="p">{</span> <span class="dl">'</span><span class="s1">player</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Smith</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">score</span><span class="dl">'</span><span class="p">:</span> <span class="mi">41</span> <span class="p">},</span>
+  <span class="na">sheet</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Sheet2</span><span class="dl">'</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <blockquote>
 <p>Example response:</p>
@@ -728,7 +797,9 @@ curl https://sheetdb.io/api/v1/58f61be4dda40/name
 </span></code></pre></div>
 <p><code>GET https://sheetdb.io/api/v1/58f61be4dda40/search?name=Steve&amp;age=22&amp;casesensitive=true</code></p>
 
-<p>Returns an array of all rows matching parameters. If any query fails, the result <strong>will NOT</strong> be listed. If you want to check if any parameter is true, check out <a href="#get-search-or-in-document"># GET - Search OR</a></p>
+<p><code>GET https://sheetdb.io/api/v1/58f61be4dda40/search_or?name=Steve&amp;age=22&amp;casesensitive=true</code></p>
+
+<p>Returns an array of all rows matching parameters. If any query fails, the result <strong>will NOT</strong> be listed. If you want to check if any parameter is true, use the search_id endpoint (second URL above).</p>
 
 <p>You can search using wildcards. Asteriks (<code>*</code>) can represent any string.
 Wildcard work only when READ and SEARCH permissions are both enabled, if only SEARCH peremission is enabled, wildcard will not work for security reasons.</p>
@@ -736,65 +807,6 @@ Wildcard work only when READ and SEARCH permissions are both enabled, if only SE
 <p>If you want to exclude rows from the search results, use an exclamation mark before the value. For example, if you want all rows without name=Tom use this url: <a href="https://sheetdb.io/api/v1/58f61be4dda40/search?name=!Tom">https://sheetdb.io/api/v1/58f61be4dda40/search?name=<strong>!Tom</strong></a></p>
 
 <p>You can use multiple queries for the same column, but you must use array notation (<code>[]</code> at the end of the variable name), for example: <a href="https://sheetdb.io/api/v1/58f61be4dda40/search?name[]=!Tom&amp;name[]=!Steve">https://sheetdb.io/api/v1/58f61be4dda40/search?name[]=!Tom&amp;name[]=!Steve</a></p>
-
-<p>If you want to search for a string with a space, just repace space with <code>%20</code>
-If you want to include &amp; symbol in your query, replace it with <code>%26</code></p>
-
-<p>You can use optional parameters:</p>
-
-<ul>
-<li><code>limit</code> - the number of rows that should be returned</li>
-<li><code>offset</code> - row from which it should start (how many rows to skip)</li>
-<li><code>sort_by</code> - the column you want to sort by</li>
-<li><code>sort_order</code> - sort in <code>asc</code> or <code>desc</code> order</li>
-<li><code>sort_method</code> - if you want to sort by date, set this parameter to <code>date</code>, it will automatically detect the date format</li>
-<li><code>casesensitive</code> - by default search is not case sensitive, to make it case sensitive set this parameter to <code>true</code></li>
-<li><code>cast_numbers</code> - if you want to cast the value to a number, add column names separated by commas. Example: <a href="https://sheetdb.io/api/v1/58f61be4dda40?cast_numbers=id,age">https://sheetdb.io/api/v1/58f61be4dda40?cast_numbers=id,age</a></li>
-</ul>
-<h2 id='get-search-or-in-document'>GET - Search OR in document</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://sheetdb.io/api/v1/58f61be4dda40/search_or?name<span class="o">=</span>Steve&amp;age<span class="o">=</span>19&amp;casesensitive<span class="o">=</span><span class="nb">true</span>
-</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-<span class="nv">$options</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-  <span class="s1">'http'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'method'</span>  <span class="o">=&gt;</span> <span class="s1">'GET'</span>
-  <span class="p">)</span>
-<span class="p">);</span>
-
-<span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
-  <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/search_or?name=Steve&amp;age=19&amp;casesensitive=true'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
-<span class="p">);</span>
-</code></pre></div><div class="highlight"><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script&gt;</span>
-    <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://sheetdb.io/api/v1/58f61be4dda40/search_or?name=Steve&amp;age=19&amp;casesensitive=true</span><span class="dl">'</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-    <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span>
-</code></pre></div>
-<blockquote>
-<p>Example response:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"61"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Steve"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"special"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"422"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"James"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre></div>
-<p><code>GET https://sheetdb.io/api/v1/58f61be4dda40/search_or?name=Steve&amp;age=19&amp;casesensitive=true</code></p>
-
-<p>Similar to <a href="#get-search-in-document"># GET - Search</a> but if <strong>any parameter</strong> succeed to match, it will be listed in response.</p>
-
-<p>You can search using wildcards. Asteriks <code>*</code> can represent any string.
-Wildcard work only when READ and SEARCH permissions are both enabled, if only SEARCH peremission is enabled, wildcard will not work for security reasons.</p>
-
-<p>You can use multiple queries for the same column, but you must use array notation (<code>[]</code> at the end of the variable name), for example: <a href="https://sheetdb.io/api/v1/58f61be4dda40/search_or?name[]=Tom&amp;name[]=Steve">https://sheetdb.io/api/v1/58f61be4dda40/search_or?name[]=Tom&amp;name[]=Steve</a></p>
 
 <p>If you want to search for a string with a space, just repace space with <code>%20</code>
 If you want to include &amp; symbol in your query, replace it with <code>%26</code></p>
@@ -840,6 +852,26 @@ If you want to include &amp; symbol in your query, replace it with <code>%26</co
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="kd">const</span> <span class="nx">sheetdb</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">sheetdb-node</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sheetdb</span><span class="p">({</span> <span class="na">address</span><span class="p">:</span> <span class="dl">'</span><span class="s1">58f61be4dda40</span><span class="dl">'</span> <span class="p">});</span>
+
+<span class="c1">// Adds single row</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">William</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">25</span> <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">/// Adds bunch of rows</span>
+<span class="nx">rows</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">William</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">25</span> <span class="p">},</span>
+  <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Jayden</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">25</span> <span class="p">}</span>
+<span class="p">]</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">rows</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <blockquote>
 <p>Example response:</p>
@@ -887,6 +919,32 @@ If you want to include &amp; symbol in your query, replace it with <code>%26</co
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="kd">const</span> <span class="nx">sheetdb</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">sheetdb-node</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sheetdb</span><span class="p">({</span> <span class="na">address</span><span class="p">:</span> <span class="dl">'</span><span class="s1">58f61be4dda40</span><span class="dl">'</span> <span class="p">});</span>
+
+<span class="c1">// Update all columns where 'name' is 'Smith' to have 'score' = 99 and 'comment' = 'Griffin'</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">name</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// column name</span>
+    <span class="dl">'</span><span class="s1">Tom</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// value to search for</span>
+    <span class="p">{</span> <span class="dl">'</span><span class="s1">comment</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Updated</span><span class="dl">'</span> <span class="p">}</span> <span class="c1">// object with updates</span>
+<span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Update all columns where 'name' is 'Smith' to have 'score' = 99 and 'comment' = 'Griffin'</span>
+<span class="c1">// In sheet named 'Sheet2'</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span>
+    <span class="dl">'</span><span class="s1">player</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// column name</span>
+    <span class="dl">'</span><span class="s1">Smith</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// value to search for</span>
+    <span class="p">{</span> <span class="dl">'</span><span class="s1">score</span><span class="dl">'</span><span class="p">:</span> <span class="mi">99</span><span class="p">,</span> <span class="dl">'</span><span class="s1">comment</span><span class="dl">'</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Griffin</span><span class="dl">'</span> <span class="p">},</span> <span class="c1">// object with updates</span>
+    <span class="dl">'</span><span class="s1">Sheet2</span><span class="dl">'</span>
+<span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <blockquote>
 <p>Example response:</p>
@@ -946,6 +1004,7 @@ Replace <code>{column}</code> and <code>{value}</code> with your values (without
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="c1">// our Node.js library does not support this method</span>
 </code></pre></div>
 <blockquote>
 <p>Example response:</p>
@@ -997,6 +1056,18 @@ Batch update works only on paid accounts.
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="kd">const</span> <span class="nx">sheetdb</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">sheetdb-node</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sheetdb</span><span class="p">({</span> <span class="na">address</span><span class="p">:</span> <span class="dl">'</span><span class="s1">58f61be4dda40</span><span class="dl">'</span> <span class="p">});</span>
+
+<span class="c1">// Delete all rows where 'name' equals 'Smith'</span>
+<span class="nx">client</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span>
+  <span class="dl">'</span><span class="s1">id</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// column name</span>
+  <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span> <span class="c1">// value to search for</span>
+<span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <blockquote>
 <p>Example response:</p>
@@ -1038,6 +1109,7 @@ Replace <code>{column}</code> and <code>{value}</code> with your values (without
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="c1">// our Node.js library does not support this method</span>
 </code></pre></div>
 <blockquote>
 <p>Example response:</p>
@@ -1085,6 +1157,15 @@ curl https://sheetdb.io/api/v1/58f61be4dda40?sheet<span class="o">=</span>Sheet2
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="kd">const</span> <span class="nx">sheetdb</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">sheetdb-node</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sheetdb</span><span class="p">({</span> <span class="na">address</span><span class="p">:</span> <span class="dl">'</span><span class="s1">58f61be4dda40</span><span class="dl">'</span> <span class="p">});</span>
+
+<span class="c1">// Sheet "Sheet2"</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">read</span><span class="p">({</span> <span class="na">sheet</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Sheet2</span><span class="dl">"</span> <span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
 </code></pre></div>
 <blockquote>
 <p>Example response:</p>
@@ -1138,6 +1219,7 @@ curl https://sheetdb.io/api/v1/58f61be4dda40?sheet<span class="o">=</span>Sheet2
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="c1">// our Node.js library does not support this method</span>
 </code></pre></div>
 <blockquote>
 <p>Example response:</p>
@@ -1188,6 +1270,7 @@ Tabs requests works only on plans premium and above.
         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="c1">// our Node.js library does not support this method</span>
 </code></pre></div>
 <blockquote>
 <p>Example response:</p>
@@ -1409,6 +1492,7 @@ or inapp chat.</p>
                 <a href="#" data-language-name="shell">cURL</a>
                 <a href="#" data-language-name="php">PHP</a>
                 <a href="#" data-language-name="html--javascript">JavaScript</a>
+                <a href="#" data-language-name="javascript--node">Node.js</a>
           </div>
       </div>
     </div>

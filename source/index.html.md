@@ -5,6 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell: cURL
   - php: PHP
   - html--javascript: JavaScript
+  - javascript--node: Node.js
 
 toc_footers:
   - <a href='https://sheetdb.io'>SheetDB</a>
@@ -19,7 +20,6 @@ includes:
   - api/get_sheets
   - api/get_count
   - api/get_search
-  - api/get_search_or
   - api/post
   - api/patch
   - api/patch_batch
@@ -41,6 +41,7 @@ You can choose your preferred programming language in the upper right corner.
 * Shell - the command line
 * PHP - examples in vanilla PHP, you can also use [our composer library](https://github.com/sheetdb/sheetdb-php)
 * JavaScript - we recommend to use Axios library or [our npm library](https://github.com/sheetdb/sheetdb-js)
+* Node.js - we recommend to use Axios library or [our npm library](https://github.com/sheetdb/sheetdb-node)
 * Pure HTML - to learn how to use SheetDB with only HTML <a href="#handlebars-installation">go to Handlebars</a>
 
 # Installation
@@ -48,8 +49,9 @@ You can choose your preferred programming language in the upper right corner.
 You can use one of our Libraries:
 
 WordPress plugin: [SheetDB on WordPress](https://wordpress.org/plugins/sheetdb/)<br />
-JavaScript: [Google Spreadsheet API for JavaScript on GitHub](https://github.com/sheetdb/sheetdb-js)<br />
-PHP: [Google Spreadsheet API for PHP on GitHub](https://github.com/sheetdb/sheetdb-php)
+JavaScript: [Google Spreadsheet REST API for JavaScript on GitHub](https://github.com/sheetdb/sheetdb-js)<br />
+PHP: [Google Spreadsheet REST API for PHP on GitHub](https://github.com/sheetdb/sheetdb-php)
+Node.js [Google Spreadsheet REST API for Node.js on GitHub](https://github.com/sheetdb/sheetdb-node)
 
 # Example spreadsheet
 

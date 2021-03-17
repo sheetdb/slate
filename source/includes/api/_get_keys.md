@@ -28,6 +28,17 @@ $result = json_decode(
 </script>
 ```
 
+```javascript--node
+const sheetdb = require("sheetdb-node");
+const client = sheetdb({ address: '58f61be4dda40' });
+
+client.endpoint('keys').then(function(data) {
+    console.log(data);
+}, function(error){
+    console.log(error);
+});
+```
+
 > Example response:
 
 ```json

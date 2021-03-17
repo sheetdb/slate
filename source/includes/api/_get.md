@@ -47,6 +47,25 @@ $result = json_decode(
 </script>
 ```
 
+```javascript--node
+const sheetdb = require("sheetdb-node");
+const client = sheetdb({ address: '58f61be4dda40' });
+
+// Read whole spreadsheet
+client.read().then(function(data) {
+    console.log(data);
+}, function(error){
+    console.log(error);
+});
+
+// Read first two rows from sheet "Sheet2"
+client.read({ limit: 2, sheet: "Sheet2" }).then(function(data) {
+  console.log(data);
+}, function(err){
+  console.log(err);
+});
+```
+
 > Example response:
 
 ```json

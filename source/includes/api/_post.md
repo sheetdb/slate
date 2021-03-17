@@ -39,6 +39,29 @@ $result = json_decode(
 </script>
 ```
 
+```javascript--node
+const sheetdb = require("sheetdb-node");
+const client = sheetdb({ address: '58f61be4dda40' });
+
+// Adds single row
+client.create({ name: "William", age: 25 }).then(function(data) {
+  console.log(data);
+}, function(err){
+  console.log(err);
+});
+
+/// Adds bunch of rows
+rows = [
+  { name: "William", age: 25 },
+  { name: "Jayden", age: 25 }
+]
+client.create(rows).then(function(data) {
+  console.log(data);
+}, function(err){
+  console.log(err);
+});
+```
+
 > Example response:
 
 ```json

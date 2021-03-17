@@ -27,6 +27,21 @@ $result = json_decode(
 </script>
 ```
 
+```javascript--node
+const sheetdb = require("sheetdb-node");
+const client = sheetdb({ address: '58f61be4dda40' });
+
+// Delete all rows where 'name' equals 'Smith'
+client.delete(
+  'id', // column name
+  '1' // value to search for
+).then(function(data) {
+  console.log(data);
+}, function(err){
+  console.log(err);
+});
+```
+
 > Example response:
 
 ```json

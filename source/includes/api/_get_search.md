@@ -27,6 +27,30 @@ $result = json_decode(
 </script>
 ```
 
+```javascript--node
+const sheetdb = require("sheetdb-node");
+const client = sheetdb({ address: '58f61be4dda40' });
+
+// Get all rows where column 'id' is 'foo' and column 'value' is 'bar'
+client.read({ search: { id: "1", name: "Tom" } }).then(function(data) {
+  console.log(data);
+}, function(err){
+  console.log(err);
+});
+
+// Get first row where column 'player' is 'Smith',
+// column 'score' is '41' from sheet named "Sheet2"
+client.read({
+  limit: 1,
+  search: { 'player': 'Smith', 'score': 41 },
+  sheet: 'Sheet2'
+}).then(function(data) {
+  console.log(data);
+}, function(err){
+  console.log(err);
+});
+```
+
 > Example response:
 
 ```json
@@ -42,7 +66,9 @@ $result = json_decode(
 
 `GET https://sheetdb.io/api/v1/58f61be4dda40/search?name=Steve&age=22&casesensitive=true`
 
-Returns an array of all rows matching parameters. If any query fails, the result **will NOT** be listed. If you want to check if any parameter is true, check out <a href="#get-search-or-in-document"># GET - Search OR</a>
+`GET https://sheetdb.io/api/v1/58f61be4dda40/search_or?name=Steve&age=22&casesensitive=true`
+
+Returns an array of all rows matching parameters. If any query fails, the result **will NOT** be listed. If you want to check if any parameter is true, use the search_id endpoint (second URL above).
 
 You can search using wildcards. Asteriks (`*`) can represent any string.
 Wildcard work only when READ and SEARCH permissions are both enabled, if only SEARCH peremission is enabled, wildcard will not work for security reasons.

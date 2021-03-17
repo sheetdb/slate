@@ -45,6 +45,18 @@ $result = json_decode(
 </script>
 ```
 
+```javascript--node
+const sheetdb = require("sheetdb-node");
+const client = sheetdb({ address: '58f61be4dda40' });
+
+// Sheet "Sheet2"
+client.read({ sheet: "Sheet2" }).then(function(data) {
+  console.log(data);
+}, function(err){
+  console.log(err);
+});
+```
+
 > Example response:
 
 ```json
@@ -110,6 +122,10 @@ $result = json_decode(
 </script>
 ```
 
+```javascript--node
+// our Node.js library does not support this method
+```
+
 > Example response:
 
 ```json
@@ -168,6 +184,10 @@ $result = json_decode(
         console.log(response.data);
     });
 </script>
+```
+
+```javascript--node
+// our Node.js library does not support this method
 ```
 
 > Example response:

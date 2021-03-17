@@ -39,6 +39,35 @@ $result = json_decode(
 </script>
 ```
 
+```javascript--node
+const sheetdb = require("sheetdb-node");
+const client = sheetdb({ address: '58f61be4dda40' });
+
+// Update all columns where 'name' is 'Smith' to have 'score' = 99 and 'comment' = 'Griffin'
+client.update(
+    'name', // column name
+    'Tom', // value to search for
+    { 'comment': 'Updated' } // object with updates
+).then(function (data) {
+    console.log(data);
+}, function (err) {
+    console.log(err);
+});
+
+// Update all columns where 'name' is 'Smith' to have 'score' = 99 and 'comment' = 'Griffin'
+// In sheet named 'Sheet2'
+client.update(
+    'player', // column name
+    'Smith', // value to search for
+    { 'score': 99, 'comment': 'Griffin' }, // object with updates
+    'Sheet2'
+).then(function (data) {
+    console.log(data);
+}, function (err) {
+    console.log(err);
+});
+```
+
 > Example response:
 
 ```json

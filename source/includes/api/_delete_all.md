@@ -27,6 +27,10 @@ $result = json_decode(
 </script>
 ```
 
+```javascript--node
+// our Node.js library does not support this method
+```
+
 > Example response:
 
 ```json
