@@ -72,5 +72,13 @@ If you have any questions please feel free to ask via
    onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;">email</a>
 or inapp chat.
 
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+## This documentation is on GitHub
+
+If you'd like to correct or add something here, please [submit a pull request](https://github.com/sheetdb/docs/pulls).
+
+<a href="https://github.com/sheetdb/docs" style="display:block; width:200px; height:auto;">
+    ![GitHub logo](/images/github-logo.png)
+    Edit on GitHub
+</a>
+
+<div style="height:200px;"></div>
