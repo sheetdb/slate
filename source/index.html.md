@@ -13,6 +13,18 @@ toc_footers:
 includes:
   - errors
   - restful_api
+  - api/get
+  - api/get_keys
+  - api/get_name
+  - api/get_sheets
+  - api/get_count
+  - api/get_search
+  - api/get_search_or
+  - api/post
+  - api/patch
+  - api/patch_batch
+  - api/delete
+  - api/delete_all
   - multiple_sheets
   - handlebars
   - other
