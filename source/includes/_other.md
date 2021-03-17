@@ -70,8 +70,6 @@ If you'd like to correct or add something here, please [submit a pull request](h
     Edit on GitHub
 </a>
 
-<div style="height:200px;"></div>
-
 ## We are here for you!
 
 If you have any questions please feel free to ask via
@@ -81,3 +79,5 @@ If you have any questions please feel free to ask via
    data-tld="io"
    onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;">email</a>
 or inapp chat.
+
+<div style="height:200px;"></div>
