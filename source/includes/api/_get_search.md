@@ -75,6 +75,13 @@ Wildcard work only when READ and SEARCH permissions are both enabled, if only SE
 
 If you want to exclude rows from the search results, use an exclamation mark before the value. For example, if you want all rows without name=Tom use this url: [https://sheetdb.io/api/v1/58f61be4dda40/search?name=**!Tom**](https://sheetdb.io/api/v1/58f61be4dda40/search?name=!Tom)
 
+You can use relational operators to determine if a value is greater than or less than a given number. Just start with `<`, `>`, `<=`, `>=` operator. Example urls:
+
+- Greater than 3: [https://sheetdb.io/api/v1/58f61be4dda40/search?id=>3](https://sheetdb.io/api/v1/58f61be4dda40/search?id=>3)
+- Less than 3: [https://sheetdb.io/api/v1/58f61be4dda40/search?id=<3](https://sheetdb.io/api/v1/58f61be4dda40/search?id=<3)
+- Greater than or equal to 3: [https://sheetdb.io/api/v1/58f61be4dda40/search?id=>=3](https://sheetdb.io/api/v1/58f61be4dda40/search?id=>=3)
+- Less than or equal to 3: [https://sheetdb.io/api/v1/58f61be4dda40/search?id=<=3](https://sheetdb.io/api/v1/58f61be4dda40/search?id=<=3)
+
 You can use multiple queries for the same column, but you must use array notation (`[]` at the end of the variable name), for example: [https://sheetdb.io/api/v1/58f61be4dda40/search?name[]=!Tom&name[]=!Steve](https://sheetdb.io/api/v1/58f61be4dda40/search?name[]=!Tom&name[]=!Steve)
 
 If you want to search for a string with a space, just repace space with `%20`
