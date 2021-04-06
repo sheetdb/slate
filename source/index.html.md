@@ -34,7 +34,7 @@ search: true
 
 # Introduction
 
-Each spreadsheet document you want to access must be configured in the SheetDB panel as an API. After creating the API, you'll receive a unique https address. You can send RESTful requests to read, create, update or delete rows. The rest of the documentation explains how each request works and what you can expect in a response.
+Each spreadsheet document you want to access must be configured in the SheetDB panel as an API. After creating the API, you’ll receive a unique endpoint url. You can send RESTful requests to read, create, update or delete rows. The rest of the documentation explains how each request works and what you can expect in a response.
 
 You can choose your preferred programming language in the upper right corner.
 
