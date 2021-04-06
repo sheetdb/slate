@@ -383,7 +383,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Each spreadsheet document you want to access must be configured in the SheetDB panel as an API. After creating the API, you&#39;ll receive a unique https address. You can send RESTful requests to read, create, update or delete rows. The rest of the documentation explains how each request works and what you can expect in a response.</p>
+<p>Each spreadsheet document you want to access must be configured in the SheetDB panel as an API. After creating the API, you’ll receive a unique endpoint url. You can send RESTful requests to read, create, update or delete rows. The rest of the documentation explains how each request works and what you can expect in a response.</p>
 
 <p>You can choose your preferred programming language in the upper right corner.</p>
 
@@ -806,7 +806,7 @@ Wildcard work only when READ and SEARCH permissions are both enabled, if only SE
 
 <p>If you want to exclude rows from the search results, use an exclamation mark before the value. For example, if you want all rows without name=Tom use this url: <a href="https://sheetdb.io/api/v1/58f61be4dda40/search?name=!Tom">https://sheetdb.io/api/v1/58f61be4dda40/search?name=<strong>!Tom</strong></a></p>
 
-<p>You can use relational operators to determine if one operand is greater than or less than a given number. just start with <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> operator. Example urls:</p>
+<p>You can use relational operators to determine if a value is greater than or less than a given number. Just start with <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> operator. Example urls:</p>
 
 <ul>
 <li>Greater than 3: <a href="https://sheetdb.io/api/v1/58f61be4dda40/search?id=&gt;3">https://sheetdb.io/api/v1/58f61be4dda40/search?id=&gt;3</a></li>
