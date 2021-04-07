@@ -68,7 +68,7 @@ client.read({
 
 `GET https://sheetdb.io/api/v1/58f61be4dda40/search_or?name=Steve&age=22&casesensitive=true`
 
-Returns an array of all rows matching parameters. If any query fails, the result **will NOT** be listed. If you want to check if any parameter is true, use the search_od endpoint (second URL above).
+Returns an array of all rows matching parameters. If any query fails, the result **will NOT** be listed. If you want to check if any parameter is true, use the search_or endpoint (second URL above).
 
 You can search using wildcards. Asterisk (`*`) can represent any string.
 Wildcard work only when READ and SEARCH permissions are both enabled, if only SEARCH peremission is enabled, wildcard will not work for security reasons.
