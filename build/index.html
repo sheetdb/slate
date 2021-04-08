@@ -1461,14 +1461,14 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
 
 <p>Additionally, there is a limit - 60 requests per 10 seconds from one IP address. If you need more please <a href="mailto:support@sheetdb.io">contact us</a>.</p>
 <h2 id='caching'>Caching</h2>
-<p>By default, we cache your API data for 30 seconds. If you are on paid plan you can change this period in API settings up to 7 days. Caching guarantees the fastest response time, especially for a large number of requests.</p>
+<p>By default, we cache your API data for 15 seconds. If you are on paid plan you can change this period in API settings up to 7 days. Caching guarantees the fastest response time, especially for a large number of requests.</p>
 
 <p>When cache is enabled, changes to the spreadsheet are not reflected in the API&#39;s until the cache expires, or until you make changes to the spreadsheet using SheetDB API. There is also an endpoint to reset cache in API settings.</p>
 
 <p><strong>Example:</strong></p>
 
 <ul>
-<li><p>If you have cache enabled for 7 days and one day later you change the content in the Google Spreadsheet website, for the next 6 days, GET endpoint will return <strong>the old data!</strong> You can use purge endpoint to manually reset the cache.</p></li>
+<li><p>If you enable cache for 7 days and one day later you change the content in the Google Spreadsheet website, for the next 6 days, GET endpoint will return <strong>the old data!</strong> You can use purge endpoint to manually reset the cache.</p></li>
 <li><p>If you modify a spreadsheet using SheetDB API - for example with the POST request, the cache will be cleared for you and after the change your GET requests will return new content immediately.</p></li>
 </ul>
 <h2 id='data-safety'>Data safety</h2>

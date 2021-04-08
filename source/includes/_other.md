@@ -41,7 +41,7 @@ Additionally, there is a limit - 60 requests per 10 seconds from one IP address.
 
 ## Caching
 
-By default, we cache your API data for 30 seconds. If you are on paid plan you can change this period in API settings up to 7 days. Caching guarantees the fastest response time, especially for a large number of requests.
+By default, we cache your API data for 15 seconds. If you are on paid plan you can change this period in API settings up to 7 days. Caching guarantees the fastest response time, especially for a large number of requests.
 
 When cache is enabled, changes to the spreadsheet are not reflected in the API's until the cache expires, or until you make changes to the spreadsheet using SheetDB API. There is also an endpoint to reset cache in API settings.
 
