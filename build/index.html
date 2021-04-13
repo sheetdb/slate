@@ -342,6 +342,9 @@
                   <li>
                     <a href="#query-strings" class="toc-h2 toc-link" data-title="Query strings">Query strings</a>
                   </li>
+                  <li>
+                    <a href="#slots" class="toc-h2 toc-link" data-title="Slots">Slots</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1340,6 +1343,7 @@ Tabs requests works only on paid plans premium and above.
 <li>You can limit and offset your response using <code>data-sheetdb-limit</code> and <code>data-sheetdb-offset</code> attributes</li>
 <li>You can search for specific data in your sheet using <code>data-sheetdb-search</code> attribute. If you want to use more than one condition join them using &amp; symbol. Example: <code>data-sheetdb-search=&quot;name=Tom&amp;age=15&quot;</code></li>
 <li>You can sort the response using <code>data-sheetdb-sort-by</code> attribute - it should be a name of the column you want to sort by. You can alo specify the order using <code>data-sheetdb-sort-order</code> - (desc or asc)</li>
+<li>If the result is not found (e.g. in search or query string) you can use the <code>data-sheetdb-not-found-message</code> attribute and as the value give the message which will be displayed to the user.</li>
 </ul>
 
 <aside class="notice">
@@ -1417,7 +1421,8 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
     </tr>
   </thead>
   <tbody data-sheetdb-url="https://sheetdb.io/api/v1/58f61be4dda40"
-         data-sheetdb-query-string="id">
+         data-sheetdb-query-string="id"
+         data-sheetdb-not-found-message="Nothing found, add ?id=1 to your query string.">
     <tr>
       <td>{{id}}</td>
       <td>{{name}}</td>
@@ -1428,6 +1433,28 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
 </table>
 
 <script src="https://sheetdb.io/handlebars.js"></script>
+<h2 id='slots'>Slots</h2><div class="highlight"><pre class="highlight html tab-html"><code><span class="nt">&lt;span</span> <span class="na">data-sheetdb-url=</span><span class="s">"https://sheetdb.io/api/v1/58f61be4dda40"</span>
+        <span class="na">data-sheetdb-save=</span><span class="s">"slot-example"</span><span class="nt">&gt;</span>
+    {{name}}
+<span class="nt">&lt;/span&gt;</span>
+
+<span class="nt">&lt;span</span> <span class="na">data-sheetdb-slot=</span><span class="s">"slot-example"</span><span class="nt">&gt;</span>
+    {{id}}
+<span class="nt">&lt;/span&gt;</span>
+</code></pre></div>
+<p>If you want to re-use your data, you can use the <code>data-sheetdb-save</code> attribute in your sheetdb element. To re-use your data use <code>data-sheetdb-slot</code>. You can use the same data inside as in the parent. To mach them value of save and slot must be the same</p>
+
+<p>This way, you only use 1 request instead of 2. Slots have access to the same data as the parent. You can’t change things like limit or search.</p>
+
+<p>This is the result of our example (using only 1 request):</p>
+
+<p><span data-sheetdb-url="https://sheetdb.io/api/v1/58f61be4dda40" data-sheetdb-save="slot-example">
+    {{name}}
+</span></p>
+
+<p><span data-sheetdb-slot="slot-example">
+    {{id}}
+</span></p>
 <h1 id='other'>Other</h1><h2 id='value-render-option'>Value Render Option</h2>
 <p>To your GET (get and search) requests, you can add optional <code>mode</code> parameter. It controls how values should be rendered in the output, as described in the following:</p>
 

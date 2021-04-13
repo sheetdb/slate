@@ -130,7 +130,8 @@ After entering your ID, watch what's happening in the address bar. After you sub
     </tr>
   </thead>
   <tbody data-sheetdb-url="https://sheetdb.io/api/v1/58f61be4dda40"
-         data-sheetdb-query-string="id">
+         data-sheetdb-query-string="id"
+         data-sheetdb-not-found-message="Nothing found, add ?id=1 to your query string.">
     <tr>
       <td>{{id}}</td>
       <td>{{name}}</td>
