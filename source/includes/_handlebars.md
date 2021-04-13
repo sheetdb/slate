@@ -140,3 +140,30 @@ After entering your ID, watch what's happening in the address bar. After you sub
   </tbody>
 </table>
 <script src="https://sheetdb.io/handlebars.js"></script>
+
+## Slots
+
+```html
+<span data-sheetdb-url="https://sheetdb.io/api/v1/58f61be4dda40"
+        data-sheetdb-save="slot-example">
+    {{name}}
+</span>
+
+<span data-sheetdb-slot="slot-example">
+    {{id}}
+</span>
+```
+
+If you want to re-use your data, you can use the `data-sheetdb-save` attribute in your sheetdb element. To re-use your data use `data-sheetdb-slot`. You can use the same data inside as in the parent. To mach them value of save and slot must be the same
+
+This way, you only use 1 request instead of 2. Slots have access to the same data as the parent. You can’t change things like limit or search.
+
+This is the result of our example (using only 1 request):
+
+<span data-sheetdb-url="https://sheetdb.io/api/v1/58f61be4dda40" data-sheetdb-save="slot-example">
+    {{name}}
+</span>
+
+<span data-sheetdb-slot="slot-example">
+    {{id}}
+</span>
