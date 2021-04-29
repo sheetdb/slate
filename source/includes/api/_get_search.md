@@ -97,3 +97,5 @@ You can use optional parameters:
 * `cast_numbers` - if you want to cast the value to a number, add column names separated by commas. Example: [https://sheetdb.io/api/v1/58f61be4dda40?cast_numbers=id,age](https://sheetdb.io/api/v1/58f61be4dda40?cast_numbers=id,age)
 * `single_object` - if you want to get ony one item as an object (not in the array), set this parameter to `true`
 * `casesensitive` - by default search is not case sensitive, to make it case sensitive set this parameter to `true`
+
+For more examples, check out this blog post: [Search feature in SheetDB API](https://blog.sheetdb.io/using-the-search-feature-in-sheetdb-api-to-filter-results-from-google-sheets-b2e5f1ae4b) or this youtube video: [Using SheetDB search API to filter results from Google Sheets](https://www.youtube.com/watch?v=hQmmhVxG0UI&ab_channel=SheetDB).

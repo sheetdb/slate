@@ -835,6 +835,8 @@ If you want to include &amp; symbol in your query, replace it with <code>%26</co
 <li><code>single_object</code> - if you want to get ony one item as an object (not in the array), set this parameter to <code>true</code></li>
 <li><code>casesensitive</code> - by default search is not case sensitive, to make it case sensitive set this parameter to <code>true</code></li>
 </ul>
+
+<p>For more examples, check out this blog post: <a href="https://blog.sheetdb.io/using-the-search-feature-in-sheetdb-api-to-filter-results-from-google-sheets-b2e5f1ae4b">Search feature in SheetDB API</a> or this youtube video: <a href="https://www.youtube.com/watch?v=hQmmhVxG0UI&amp;ab_channel=SheetDB">Using SheetDB search API to filter results from Google Sheets</a>.</p>
 <h2 id='post-create-row'>POST - Create row</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> https://sheetdb.io/api/v1/58f61be4dda40 <span class="nt">-d</span> <span class="s1">'{"data":[{ "name": "Scott", "age": "25" }]}'</span>
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$data</span> <span class="o">=</span> <span class="nb">http_build_query</span><span class="p">(</span>
@@ -1442,7 +1444,7 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
     {{id}}
 <span class="nt">&lt;/span&gt;</span>
 </code></pre></div>
-<p>If you want to re-use your data, you can use the <code>data-sheetdb-save</code> attribute in your sheetdb element. To re-use your data use <code>data-sheetdb-slot</code>. You can use the same data inside as in the parent. To mach them value of save and slot must be the same</p>
+<p>If you want to re-use your data, you can use the <code>data-sheetdb-save</code> attribute in your sheetdb element. To re-use your data use <code>data-sheetdb-slot</code>. You can use the same data inside as in the parent. To match them the value of save and slot must be the same</p>
 
 <p>This way, you only use 1 request instead of 2. Slots have access to the same data as the parent. You can’t change things like limit or search.</p>
 
