@@ -4,6 +4,13 @@ To select other then the first sheet you need to pass a <code style="word-break:
 
 When sheet is not found you'll get 404 error.
 
+Here are sample URLs for different methods (for a sheet named `sheet2`):
+
+- `GET` <small>https://sheetdb.io/api/v1/58f61be4dda40?sheet=sheet2</small>
+- `POST` <small>https://sheetdb.io/api/v1/58f61be4dda40?sheet=sheet2</small>
+- `PATCH` <small>https://sheetdb.io/api/v1/58f61be4dda40/{column}/{value}?sheet=sheet2</small>
+- `DELETE` <small>https://sheetdb.io/api/v1/58f61be4dda40/{column}/{value}?sheet=sheet2</small>
+
 ## GET - All data from a tab
 
 ```shell
