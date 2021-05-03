@@ -107,7 +107,7 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
 
 To change content dynamically you can use query strings. If you add `data-sheetdb-query-string` and specify the parameter you want to filter by, you can add query to the address bar. For example if you use `data-sheetdb-query-string="id"` and add ?id=3 to the url you will get filtered data and display only results with id=3.
 
-If you want to use more query strings, separate them with a comma with no spaces in between. E.g `data-sheetdb-query-string="id,age"`.
+If you want to use more query strings, separate them with commas with no spaces in between. E.g `data-sheetdb-query-string="id,age"`.
 
 ### Here is the result of example code:
 
