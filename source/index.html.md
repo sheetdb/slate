@@ -50,7 +50,7 @@ You can use one of our Libraries:
 
 WordPress plugin: [SheetDB on WordPress](https://wordpress.org/plugins/sheetdb/)<br />
 JavaScript: [Google Spreadsheet REST API for JavaScript on GitHub](https://github.com/sheetdb/sheetdb-js)<br />
-PHP: [Google Spreadsheet REST API for PHP on GitHub](https://github.com/sheetdb/sheetdb-php)
+PHP: [Google Spreadsheet REST API for PHP on GitHub](https://github.com/sheetdb/sheetdb-php)<br />
 Node.js [Google Spreadsheet REST API for Node.js on GitHub](https://github.com/sheetdb/sheetdb-node)
 
 # Example spreadsheet

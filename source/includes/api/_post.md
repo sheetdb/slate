@@ -78,4 +78,6 @@ You can also add multiple rows at once using an array of objects. Example: `{"da
 
 You can use value `INCREMENT` (upper case). SheetDB will look for the biggest number in the given column and increase by 1.
 
+If for some reason you cannot put your data into the `data` parameter, SheetDB will try to use the entire request data to match the spreadsheet format.
+
 API will return the number of created rows with status code `201 Created`.

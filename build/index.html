@@ -402,7 +402,7 @@
 
 <p>WordPress plugin: <a href="https://wordpress.org/plugins/sheetdb/">SheetDB on WordPress</a><br />
 JavaScript: <a href="https://github.com/sheetdb/sheetdb-js">Google Spreadsheet REST API for JavaScript on GitHub</a><br />
-PHP: <a href="https://github.com/sheetdb/sheetdb-php">Google Spreadsheet REST API for PHP on GitHub</a>
+PHP: <a href="https://github.com/sheetdb/sheetdb-php">Google Spreadsheet REST API for PHP on GitHub</a><br />
 Node.js <a href="https://github.com/sheetdb/sheetdb-node">Google Spreadsheet REST API for Node.js on GitHub</a></p>
 <h1 id='example-spreadsheet'>Example spreadsheet</h1>
 <p>You can play with our test API here: <a href="https://sheetdb.io/api/v1/58f61be4dda40">https://sheetdb.io/api/v1/58f61be4dda40</a></p>
@@ -902,6 +902,8 @@ If you want to include &amp; symbol in your query, replace it with <code>%26</co
 <p>You can also add multiple rows at once using an array of objects. Example: <code>{&quot;data&quot;: [{&quot;id&quot;:5,&quot;name&quot;:&quot;Frank&quot;},{&quot;id&quot;:6,&quot;name&quot;:&quot;Marc&quot;}]}</code></p>
 
 <p>You can use value <code>INCREMENT</code> (upper case). SheetDB will look for the biggest number in the given column and increase by 1.</p>
+
+<p>If for some reason you cannot put your data into the <code>data</code> parameter, SheetDB will try to use the entire request data to match the spreadsheet format.</p>
 
 <p>API will return the number of created rows with status code <code>201 Created</code>.</p>
 <h2 id='patch-put-update'>PATCH/PUT - Update</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PATCH <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> https://sheetdb.io/api/v1/58f61be4dda40/id/61 <span class="nt">-d</span> <span class="s1">'{"data":[{ "name": "Scott", "age": "25" }]}'</span>
