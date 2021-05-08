@@ -180,3 +180,7 @@ window.addEventListener("sheetdb-downloaded", function() {
 ```
 
 After downloading all the data, the handlebars library will trigger a custom event `sheetdb-downloaded`. You can listen for this event to execute some javascript code after getting the data and rendering the DOM.
+
+## Update content
+
+If you want to update the contents of SheetDB, you can use the global function `sheetdb_upd ()`. It will force all content to be downloaded again from the spreadsheet.
