@@ -348,6 +348,9 @@
                   <li>
                     <a href="#events" class="toc-h2 toc-link" data-title="Events">Events</a>
                   </li>
+                  <li>
+                    <a href="#update-content" class="toc-h2 toc-link" data-title="Update content">Update content</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1478,6 +1481,8 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
 <span class="p">});</span>
 </code></pre></div>
 <p>After downloading all the data, the handlebars library will trigger a custom event <code>sheetdb-downloaded</code>. You can listen for this event to execute some javascript code after getting the data and rendering the DOM.</p>
+<h2 id='update-content'>Update content</h2>
+<p>If you want to update the contents of SheetDB, you can use the global function <code>sheetdb_upd()</code>. It will force all content to be downloaded again from the spreadsheet.</p>
 <h1 id='other'>Other</h1><h2 id='value-render-option'>Value Render Option</h2>
 <p>To your GET (get and search) requests, you can add optional <code>mode</code> parameter. It controls how values should be rendered in the output, as described in the following:</p>
 

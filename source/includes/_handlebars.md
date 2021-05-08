@@ -183,4 +183,4 @@ After downloading all the data, the handlebars library will trigger a custom eve
 
 ## Update content
 
-If you want to update the contents of SheetDB, you can use the global function `sheetdb_upd ()`. It will force all content to be downloaded again from the spreadsheet.
+If you want to update the contents of SheetDB, you can use the global function `sheetdb_upd()`. It will force all content to be downloaded again from the spreadsheet.
