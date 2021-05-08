@@ -345,6 +345,9 @@
                   <li>
                     <a href="#slots" class="toc-h2 toc-link" data-title="Slots">Slots</a>
                   </li>
+                  <li>
+                    <a href="#events" class="toc-h2 toc-link" data-title="Events">Events</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -1470,6 +1473,11 @@ If you are using Vue.js, you have to use <code>v-pre</code> attribute on element
 <p><span data-sheetdb-slot="slot-example">
     {{id}}
 </span></p>
+<h2 id='events'>Events</h2><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">sheetdb-downloaded</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// this code will be executed after all sheetdb data has been retrieved</span>
+<span class="p">});</span>
+</code></pre></div>
+<p>After downloading all the data, the handlebars library will trigger a custom event <code>sheetdb-downloaded</code>. You can listen for this event to execute some javascript code after getting the data and rendering the DOM.</p>
 <h1 id='other'>Other</h1><h2 id='value-render-option'>Value Render Option</h2>
 <p>To your GET (get and search) requests, you can add optional <code>mode</code> parameter. It controls how values should be rendered in the output, as described in the following:</p>
 

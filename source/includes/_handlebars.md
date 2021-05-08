@@ -170,3 +170,13 @@ This is the result of our example (using only 1 request):
 <span data-sheetdb-slot="slot-example">
     {{id}}
 </span>
+
+## Events
+
+```javascript
+window.addEventListener("sheetdb-downloaded", function() {
+    // this code will be executed after all sheetdb data has been retrieved
+});
+```
+
+After downloading all the data, the handlebars library will trigger a custom event `sheetdb-downloaded`. You can listen for this event to execute some javascript code after getting the data and rendering the DOM.
