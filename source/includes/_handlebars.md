@@ -44,6 +44,7 @@ Now you can display data from your spreadsheet.
 * By default, you will receive data from the first sheet (tab). If you want to work with another sheet, use `data-sheetdb-sheet` and enter the name of the sheet (case sensitive).
 * You can limit and offset your response using `data-sheetdb-limit` and `data-sheetdb-offset` attributes
 * You can search for specific data in your sheet using `data-sheetdb-search` attribute. If you want to use more than one condition join them using & symbol. Example: `data-sheetdb-search="name=Tom&age=15"`
+* If you want to use search_or endpoint, please specify `data-sheetdb-search-mode="or"`, if you want to target one column more than once, don't forget square brackets like this: `data-sheetdb-search="id[]=1&id[]=2"`
 * You can sort the response using `data-sheetdb-sort-by` attribute - it should be a name of the column you want to sort by. You can alo specify the order using `data-sheetdb-sort-order` - (desc or asc)
 * If the result is not found (e.g. in search or query string) you can use the `data-sheetdb-not-found-message` attribute and as the value give the message which will be displayed to the user.
 

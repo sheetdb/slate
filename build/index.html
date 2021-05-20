@@ -1361,6 +1361,7 @@ Tabs requests works only on paid plans premium and above.
 <li>By default, you will receive data from the first sheet (tab). If you want to work with another sheet, use <code>data-sheetdb-sheet</code> and enter the name of the sheet (case sensitive).</li>
 <li>You can limit and offset your response using <code>data-sheetdb-limit</code> and <code>data-sheetdb-offset</code> attributes</li>
 <li>You can search for specific data in your sheet using <code>data-sheetdb-search</code> attribute. If you want to use more than one condition join them using &amp; symbol. Example: <code>data-sheetdb-search=&quot;name=Tom&amp;age=15&quot;</code></li>
+<li>If you want to use search_or endpoint, please specify <code>data-sheetdb-search-mode=&quot;or&quot;</code>, if you want to target one column more than once, don&#39;t forget square brackets like this: <code>data-sheetdb-search=&quot;id[]=1&amp;id[]=2&quot;</code></li>
 <li>You can sort the response using <code>data-sheetdb-sort-by</code> attribute - it should be a name of the column you want to sort by. You can alo specify the order using <code>data-sheetdb-sort-order</code> - (desc or asc)</li>
 <li>If the result is not found (e.g. in search or query string) you can use the <code>data-sheetdb-not-found-message</code> attribute and as the value give the message which will be displayed to the user.</li>
 </ul>
