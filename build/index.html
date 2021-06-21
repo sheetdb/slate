@@ -303,6 +303,9 @@
                     <a href="#post-create-row" class="toc-h2 toc-link" data-title="POST - Create row">POST - Create row</a>
                   </li>
                   <li>
+                    <a href="#post-import-json" class="toc-h2 toc-link" data-title="POST - Import JSON">POST - Import JSON</a>
+                  </li>
+                  <li>
                     <a href="#patch-put-update" class="toc-h2 toc-link" data-title="PATCH/PUT - Update">PATCH/PUT - Update</a>
                   </li>
                   <li>
@@ -910,6 +913,61 @@ If you want to include &amp; symbol in your query, replace it with <code>%26</co
 <p>You can use value <code>INCREMENT</code> (upper case). SheetDB will look for the biggest number in the given column and increase by 1.</p>
 
 <p>If for some reason you cannot put your data into the <code>data</code> parameter, SheetDB will try to use the entire request data to match the spreadsheet format.</p>
+
+<p>API will return the number of created rows with status code <code>201 Created</code>.</p>
+<h2 id='post-import-json'>POST - Import JSON</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> https://sheetdb.io/api/v1/58f61be4dda40/import/json <span class="nt">-d</span> <span class="s1">'{"json":[{ "name": "Scott", "age": "25" }]}'</span>
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$data</span> <span class="o">=</span> <span class="nb">http_build_query</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="s1">'json'</span> <span class="o">=&gt;</span>
+        <span class="p">[</span>
+          <span class="p">[</span><span class="s1">'name'</span> <span class="o">=&gt;</span> <span class="s1">'Scott'</span><span class="p">,</span> <span class="s1">'age'</span> <span class="o">=&gt;</span> <span class="mi">25</span><span class="p">]</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+
+<span class="nv">$options</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'http'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'method'</span>  <span class="o">=&gt;</span> <span class="s1">'POST'</span><span class="p">,</span>
+    <span class="s1">'header'</span>  <span class="o">=&gt;</span> <span class="s1">'Content-type: application/x-www-form-urlencoded'</span><span class="p">,</span>
+    <span class="s1">'content'</span> <span class="o">=&gt;</span> <span class="nv">$data</span>
+  <span class="p">)</span>
+<span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
+  <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/import/json'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
+<span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://sheetdb.io/api/v1/58f61be4dda40/import/json</span><span class="dl">'</span><span class="p">,{</span>
+        <span class="dl">"</span><span class="s2">json</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span><span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Scott</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">age</span><span class="dl">"</span><span class="p">:</span> <span class="mi">25</span><span class="p">}</span>
+    <span class="p">}).</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>POST https://sheetdb.io/api/v1/58f61be4dda40/import/json</code></p>
+
+<p>If you have empty spreadsheet without the first row you can use this endpoint to import entire JSON. Make sure that the spreadsheet is empty, if not the endpoint will append new content with the first row. First row (coumn names) will be generated from the first object in array.</p>
+
+<p>Required parameters:</p>
+
+<ul>
+<li><code>json</code> - should contain valid json array, e.g. <code>[{ &quot;name&quot;: &quot;Scott&quot;, &quot;age&quot;: &quot;25&quot; }]</code></li>
+</ul>
+
+<p>Optional parameters:</p>
+
+<ul>
+<li><code>sheet</code> - to select other then the first sheet</li>
+</ul>
 
 <p>API will return the number of created rows with status code <code>201 Created</code>.</p>
 <h2 id='patch-put-update'>PATCH/PUT - Update</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> PATCH <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> https://sheetdb.io/api/v1/58f61be4dda40/id/61 <span class="nt">-d</span> <span class="s1">'{"data":[{ "name": "Scott", "age": "25" }]}'</span>

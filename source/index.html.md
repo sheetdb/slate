@@ -21,6 +21,7 @@ includes:
   - api/get_count
   - api/get_search
   - api/post
+  - api/import_json
   - api/patch
   - api/patch_batch
   - api/delete
