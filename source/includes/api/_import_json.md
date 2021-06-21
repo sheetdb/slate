@@ -43,7 +43,7 @@ $result = json_decode(
 
 ```json
 {
-  "created": 2
+  "created": 1
 }
 ```
 
