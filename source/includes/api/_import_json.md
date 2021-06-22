@@ -49,7 +49,7 @@ $result = json_decode(
 
 `POST https://sheetdb.io/api/v1/58f61be4dda40/import/json`
 
-If you have empty spreadsheet without the first row you can use this endpoint to import entire JSON. Make sure that the spreadsheet is empty, if not the endpoint will append new content with the first row. First row (coumn names) will be generated from the first object in array.
+If you have an empty spreadsheet, above all with a first row unfilled, you can use this endpoint to import entire JSON file. Make sure that the spreadsheet is empty or the endpoint will append new content to the first row. The first row (column names) will be generated from the first object in the array.
 
 Required parameters:
 
