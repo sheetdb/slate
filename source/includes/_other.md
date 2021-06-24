@@ -30,7 +30,7 @@ After you hit your rate limit, your requests will return an error: `429 Too Many
 
 There are 2 more limits:
 
-- 2,000 requests per user (for 100 seconds)
+- 100 requests per 100 seconds per user
 - variable limit of requests per one spreadsheet (for 100 seconds)
 
 Both are limits imposed by Google and cannot be changed. If you need more, best solution is enabling cache. SheetDB limit will be calculated as usual, however Google limits do not apply because in the case of cache results we do not query Google servers.
