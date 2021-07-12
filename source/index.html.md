@@ -26,6 +26,7 @@ includes:
   - api/patch_batch
   - api/delete
   - api/delete_all
+  - single_cells
   - multiple_sheets
   - handlebars
   - other

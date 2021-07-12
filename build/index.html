@@ -320,6 +320,14 @@
               </ul>
           </li>
           <li>
+            <a href="#single-cells" class="toc-h1 toc-link" data-title="Single cells">Single cells</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-cells-values" class="toc-h2 toc-link" data-title="GET - Cells values">GET - Cells values</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#multiple-sheets-tabs" class="toc-h1 toc-link" data-title="Multiple Sheets (tabs)">Multiple Sheets (tabs)</a>
               <ul class="toc-list-h2">
                   <li>
@@ -1204,6 +1212,41 @@ Replace <code>{column}</code> and <code>{value}</code> with your values (without
 <p>Delete all rows without the first one (column names) in spreadsheet. By default first sheet (tab) is selected but you can target any sheet you want using param sheet. Example: <code>?sheet=Sheet2</code></p>
 
 <p>It returns count of deleted rows.</p>
+<h1 id='single-cells'>Single cells</h1><h2 id='get-cells-values'>GET - Cells values</h2><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># Get A1 cell</span>
+curl https://sheetdb.io/api/v1/58f61be4dda40/cells/A1
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$options</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'http'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'method'</span>  <span class="o">=&gt;</span> <span class="s1">'GET'</span>
+  <span class="p">)</span>
+<span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
+  <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/cells/A1'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
+<span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">axios</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://sheetdb.io/api/v1/58f61be4dda40/cells/A1</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="c1">// we do not support single cells in our node package :(</span>
+</code></pre></div>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"A1"</span><span class="p">:</span><span class="s2">"id"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>GET https://sheetdb.io/api/v1/58f61be4dda40/cells/A1</code></p>
+
+<p>If you want to retrieve the contents of a single cell using coordinates like A1, B10 etc. you can use this endpoint. Returns an array with coordinates as key and cell contents as value.</p>
+
+<p>If you want to get multiple cells just separate them with a comma. Example:</p>
+
+<p><code>GET https://sheetdb.io/api/v1/58f61be4dda40/cells/A1,A2,B5</code></p>
 <h1 id='multiple-sheets-tabs'>Multiple Sheets (tabs)</h1>
 <p>To select other then the first sheet you need to pass a <code style="word-break:normal;">sheet</code> parameter wtih sheet name. You can add this parameter to any of our RESTful requests (<code>GET</code>, <code>POST</code>, <code>PATCH</code>, <code>PUT</code>, <code>DELETE</code>).</p>
 
