@@ -315,6 +315,9 @@
                     <a href="#delete" class="toc-h2 toc-link" data-title="DELETE">DELETE</a>
                   </li>
                   <li>
+                    <a href="#delete-duplicates" class="toc-h2 toc-link" data-title="DELETE - Duplicates">DELETE - Duplicates</a>
+                  </li>
+                  <li>
                     <a href="#delete-all-content" class="toc-h2 toc-link" data-title="DELETE - All content">DELETE - All content</a>
                   </li>
               </ul>
@@ -1180,6 +1183,40 @@ Replace <code>{column}</code> and <code>{value}</code> with your values (without
 <ul>
 <li><code>limit</code> - the number of rows to delete. When dealing with a large spreadsheet and a large number of rows to delete, is&#39;s recommended to use limit.</li>
 </ul>
+<h2 id='delete-duplicates'>DELETE - Duplicates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> https://sheetdb.io/api/v1/58f61be4dda40/duplicates
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+<span class="nv">$options</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+  <span class="s1">'http'</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'method'</span>  <span class="o">=&gt;</span> <span class="s1">'DELETE'</span>
+  <span class="p">)</span>
+<span class="p">);</span>
+
+<span class="nv">$result</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span>
+  <span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">'https://sheetdb.io/api/v1/58f61be4dda40/duplicates'</span><span class="p">,</span> <span class="kc">false</span><span class="p">,</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$options</span><span class="p">))</span>
+<span class="p">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight html tab-html--javascript"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="nx">axios</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://sheetdb.io/api/v1/58f61be4dda40/duplicates</span><span class="dl">'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span> <span class="nx">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript--node"><code><span class="c1">// our Node.js library does not support this method</span>
+</code></pre></div>
+<blockquote>
+<p>Example response:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"duplicates"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p><code>DELETE https://sheetdb.io/api/v1/58f61be4dda40/duplicates</code></p>
+
+<p>Deletes all duplicate rows, all columns must contain exactly the same data to be deleted.</p>
+
+<p>By default first sheet (tab) is selected but you can target any sheet you want using param sheet. Example: <code>?sheet=Sheet2</code></p>
+
+<p>It returns count of duplicated rows.</p>
 <h2 id='delete-all-content'>DELETE - All content</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> https://sheetdb.io/api/v1/58f61be4dda40/all
 </code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
 <span class="nv">$options</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
