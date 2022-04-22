@@ -32,7 +32,7 @@ $result = json_decode(
 <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 <script>
     axios.post('https://sheetdb.io/api/v1/58f61be4dda40/import/json',{
-        "json": {"name": "Scott", "age": 25}
+        "json": '{"name": "Scott", "age": 25}'
     }).then( response => {
         console.log(response.data);
     });
